@@ -5,10 +5,10 @@ Music Theory (Usage of Sheet Music/magic)
 
 Performance (Movement and stuff that takes stamina)
 -Crowd Surf: Can jump on enemy heads
--
--
+-Green Room: Can heal in safe zones
+-Countermelody: Parry
 
 Mosh (Physical attacking and whatnot)
 -Headbang: Increases physical damage
 -In the Pit: Hitting more than 1 enemy at once deals extra damage
--
+-Throwing Elbows: Thorns damage
