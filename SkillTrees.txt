@@ -1,0 +1,14 @@
+Music Theory (Usage of Sheet Music/magic)
+-Set Length: Increase how much Sheet Music you can have prepped at once
+-Subgenre: Extra elemental damage buffs depending on genre
+-Power Chord: Decreases cooldowns
+
+Performance (Movement and stuff that takes stamina)
+-Crowd Surf: Can jump on enemy heads
+-
+-
+
+Mosh (Physical attacking and whatnot)
+-Headbang: Increases physical damage
+-In the Pit: Hitting more than 1 enemy at once deals extra damage
+-
