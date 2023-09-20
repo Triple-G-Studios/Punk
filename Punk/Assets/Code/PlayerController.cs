@@ -41,16 +41,28 @@ namespace Punk
         // Update is called once per frame
         void Update()
         {
+
+            float defaultSpeed = 18f;
+            float speedMultiplier = 1.5f;
+
+            float currentSpeed = defaultSpeed;
+
+            // Run
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                currentSpeed *= speedMultiplier;
+            }
+
             // Move Player Left
             if (Input.GetKey(KeyCode.A))
             {
-                _rigidbody2D.AddForce(Vector2.left * 18f * Time.deltaTime, ForceMode2D.Impulse);
+                _rigidbody2D.AddForce(Vector2.left * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
                 sprite.flipX = true;
             }
             // Move Player Right
             if (Input.GetKey(KeyCode.D))
             {
-                _rigidbody2D.AddForce(Vector2.right * 18f * Time.deltaTime, ForceMode2D.Impulse);
+                _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
                 sprite.flipX = false;
             }
 
@@ -64,6 +76,13 @@ namespace Punk
                 }
             }
             animator.SetInteger("JumpsLeft", jumpsLeft);
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                animator.SetTrigger("attack");
+            }
+
+            print(animator.speed);
         }
 
         private void OnCollisionStay2D(Collision2D other)
