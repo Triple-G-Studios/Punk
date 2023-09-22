@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Punk
 {
@@ -46,7 +47,7 @@ namespace Punk
         {
 
             float defaultSpeed = 18f;
-            float speedMultiplier = 1.5f;
+            //float speedMultiplier = 1.5f;
             dashTimer -= Time.deltaTime;
             if (dashTimer < 0) canDash = true;
 
@@ -61,10 +62,10 @@ namespace Punk
             }
 
             // Run
-            if (Input.GetKey(KeyCode.LeftShift))
+            /*if (Input.GetKey(KeyCode.LeftShift))
             {
                 currentSpeed *= speedMultiplier;
-            }
+            }*/
 
             // Move Player Left
             if (Input.GetKey(KeyCode.A))
@@ -134,6 +135,18 @@ namespace Punk
                     }
                 }
             }
+
+            //Colliding with enemy
+            if (other.gameObject.GetComponent<EnemyController>() && !isDashing)
+            {
+                Die();
+            }
+        }
+
+        //TODO: Change what Die() does, right now it just resets scene
+        void Die()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
