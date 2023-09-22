@@ -105,9 +105,11 @@ namespace Punk
             }
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
-            if (Input.GetKeyDown(KeyCode.K))
+            // Attack
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                animator.SetTrigger("attack");
+                // animator.SetTrigger("Attack");
+                animator.Play("Attack");
             }
 
             print(animator.speed);
