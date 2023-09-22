@@ -108,8 +108,7 @@ namespace Punk
             // Attack
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                // animator.SetTrigger("Attack");
-                animator.Play("Attack");
+                animator.SetTrigger("Attack");
             }
 
             print(animator.speed);
