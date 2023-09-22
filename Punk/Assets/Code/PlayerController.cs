@@ -34,7 +34,6 @@ namespace Punk
             if (_rigidbody2D.velocity.magnitude > 0)
             {
                 animator.speed = _rigidbody2D.velocity.magnitude / 3f;
-
             }
             else
             {
@@ -58,6 +57,7 @@ namespace Punk
             {
                 _rigidbody2D.velocity = savedVelocity;
                 isDashing = false;
+                animator.SetBool("Is Dashing", false);
             }
 
             // Run
@@ -85,10 +85,11 @@ namespace Punk
                 if (canDash)
                 {
                     savedVelocity = _rigidbody2D.velocity;
-                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x * 5f, _rigidbody2D.velocity.y);
+                    _rigidbody2D.velocity = new Vector2((_rigidbody2D.velocity.x + (sprite.flipX?-2f:2f)) * 5f, _rigidbody2D.velocity.y);
                     canDash = false;
                     isDashing = true;
                     dashTimer = 1.5f;
+                    animator.SetBool("Is Dashing", true);
                 }
             }
 
