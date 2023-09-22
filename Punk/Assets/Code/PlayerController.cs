@@ -13,6 +13,10 @@ namespace Punk
 
         // State Tracking
         public int jumpsLeft;
+        public bool canDash;
+        public float dashTimer;
+        public bool isDashing;
+        private Vector2 savedVelocity; //for dashing
 
 
         // Methods (Start is called before the first frame update)
@@ -44,8 +48,17 @@ namespace Punk
 
             float defaultSpeed = 18f;
             float speedMultiplier = 1.5f;
+            dashTimer -= Time.deltaTime;
+            if (dashTimer < 0) canDash = true;
 
             float currentSpeed = defaultSpeed;
+
+            //turn off dash on update
+            if (isDashing && dashTimer <= 1.4f)
+            {
+                _rigidbody2D.velocity = savedVelocity;
+                isDashing = false;
+            }
 
             // Run
             if (Input.GetKey(KeyCode.LeftShift))
@@ -64,6 +77,19 @@ namespace Punk
             {
                 _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
                 sprite.flipX = false;
+            }
+
+            // Dash
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (canDash)
+                {
+                    savedVelocity = _rigidbody2D.velocity;
+                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x * 5f, _rigidbody2D.velocity.y);
+                    canDash = false;
+                    isDashing = true;
+                    dashTimer = 1.5f;
+                }
             }
 
             // Jump
