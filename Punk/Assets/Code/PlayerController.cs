@@ -19,7 +19,6 @@ namespace Punk
         public bool isDashing;
         private Vector2 savedVelocity; //for dashing
 
-
         // Methods (Start is called before the first frame update)
         void Start()
         {
