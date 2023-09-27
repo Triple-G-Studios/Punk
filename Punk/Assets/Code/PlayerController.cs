@@ -18,6 +18,7 @@ namespace Punk
         public float dashTimer;
         public bool isDashing;
         private Vector2 savedVelocity; //for dashing
+        private bool facingRight;
 
         // Methods (Start is called before the first frame update)
         void Start()
@@ -70,13 +71,20 @@ namespace Punk
             if (Input.GetKey(KeyCode.A))
             {
                 _rigidbody2D.AddForce(Vector2.left * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                sprite.flipX = true;
+
+                Vector3 theScale = transform.localScale;
+                theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
+                transform.localScale = theScale;
             }
+
             // Move Player Right
             if (Input.GetKey(KeyCode.D))
             {
                 _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                sprite.flipX = false;
+
+                Vector3 theScale = transform.localScale;
+                theScale.x = Mathf.Abs(theScale.x); // Ensure it's always positive when moving right
+                transform.localScale = theScale;
             }
 
             // Dash
@@ -113,6 +121,16 @@ namespace Punk
             print(animator.speed);
         }
 
+        void Flip()
+        {
+            // Switch the way the player is labelled as facing
+            facingRight = !facingRight;
+            // Multiply the player's x local scale by -1
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
+
         private void OnCollisionStay2D(Collision2D other)
         {
             // Check that we collided with Ground
@@ -142,6 +160,18 @@ namespace Punk
                 Die();
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy") && !isDashing)
+            {
+                // Logic to execute when hitbox collides with an enemy
+                Destroy(other.gameObject); // Example: Destroy the enemy
+            }
+        }
+
+
+
 
         //TODO: Change what Die() does, right now it just resets scene
         void Die()
