@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 1094201972}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 1200374286}
   - component: {fileID: 1200374285}
   - component: {fileID: 1200374287}
+  - component: {fileID: 1200374288}
   m_Layer: 10
   m_Name: hitBox
   m_TagString: Untagged
@@ -645,6 +646,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15480bb1e5c2a4c4481e70fe386ae8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1200374288
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200374283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8efd4530f2084776bf3a6cf583b697b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1599147527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,9 +1398,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690450076417313856, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 8917535618494782669, guid: 391d588a68a8848a48b97b64534f8803, type: 3}
     - target: {fileID: 922570570603351997, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 922570570603351997, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8819139324827719319, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1433,9 +1463,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690450076417313856, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
+      propertyPath: laserPrefab
+      value: 
+      objectReference: {fileID: 8917535618494782669, guid: 391d588a68a8848a48b97b64534f8803, type: 3}
     - target: {fileID: 922570570603351997, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 922570570603351997, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8819139324827719319, guid: d3f57f24cb5214a4da589efe33699009, type: 3}
       propertyPath: m_LocalPosition.x

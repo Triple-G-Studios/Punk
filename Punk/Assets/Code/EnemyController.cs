@@ -6,41 +6,88 @@ namespace Punk
 {
     public class EnemyController : MonoBehaviour
     {
-        //Outlet
+        // Outlet
         Rigidbody2D _rb;
         SpriteRenderer sprite;
         Animator animator;
+        GameObject player;
 
-        //State Tracking
+        public GameObject laserPrefab; 
+        public float visionRange = 5f; 
+        public float shootInterval = 2f; 
+        private float lastShootTime;
+
+        // State Tracking
         bool directionLeft;
 
-        // Start is called before the first frame update
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             sprite = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             directionLeft = true;
+
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
-        // Update is called once per frame
         void Update()
         {
             float defaultSpeed = 12f;
+            Vector2 directionToPlayer = player.transform.position - transform.position;
 
-            if (directionLeft)
+            if (directionToPlayer.magnitude <= visionRange)
             {
-                _rb.AddForce(Vector2.left * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                sprite.flipX = true;
-            }
+                _rb.velocity = Vector2.zero;
+                animator.SetFloat("Speed", 0);
+                animator.SetBool("Is Attacking", true);
 
+
+                if (Time.time - lastShootTime >= shootInterval)
+                {
+                    ShootLaser();
+                    lastShootTime = Time.time;
+                }
+            }
             else
             {
-                _rb.AddForce(Vector2.right * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                sprite.flipX = false;
-            }
+                if (directionLeft)
+                {
+                    _rb.AddForce(Vector2.left * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
+                    Vector3 theScale = transform.localScale;
+                    theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
+                    transform.localScale = theScale;
+                    //sprite.flipX = true;
+                }
+                else
+                {
+                    _rb.AddForce(Vector2.right * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
+                    Vector3 theScale = transform.localScale;
+                    theScale.x = Mathf.Abs(theScale.x); // Ensure it's always positive when moving right
+                    transform.localScale = theScale;
+                    //sprite.flipX = false;
+                }
 
-            animator.SetFloat("Speed", _rb.velocity.magnitude);
+                animator.SetFloat("Speed", _rb.velocity.magnitude);
+                animator.SetBool("Is Attacking", false);
+
+            }
+        }
+
+        void ShootLaser()
+        {
+            Vector2 laserSpawnPosition = new Vector2(transform.position.x, transform.position.y + 0.45f);
+            GameObject laser = Instantiate(laserPrefab, laserSpawnPosition, Quaternion.identity);
+            Rigidbody2D laserRb = laser.GetComponent<Rigidbody2D>();
+
+            float laserSpeed = 5f;
+            if (directionLeft)
+            {
+                laserRb.velocity = Vector2.left * laserSpeed;
+            }
+            else
+            {
+                laserRb.velocity = Vector2.right * laserSpeed;
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)

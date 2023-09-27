@@ -71,7 +71,6 @@ namespace Punk
             if (Input.GetKey(KeyCode.A))
             {
                 _rigidbody2D.AddForce(Vector2.left * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-
                 Vector3 theScale = transform.localScale;
                 theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
                 transform.localScale = theScale;
@@ -81,7 +80,6 @@ namespace Punk
             if (Input.GetKey(KeyCode.D))
             {
                 _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-
                 Vector3 theScale = transform.localScale;
                 theScale.x = Mathf.Abs(theScale.x); // Ensure it's always positive when moving right
                 transform.localScale = theScale;
@@ -155,22 +153,11 @@ namespace Punk
             }
 
             //Colliding with enemy
-            if (other.gameObject.GetComponent<EnemyController>() && !isDashing)
+            if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing)
             {
                 Die();
             }
         }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy") && !isDashing)
-            {
-                // Logic to execute when hitbox collides with an enemy
-                Destroy(other.gameObject); // Example: Destroy the enemy
-            }
-        }
-
-
 
 
         //TODO: Change what Die() does, right now it just resets scene
