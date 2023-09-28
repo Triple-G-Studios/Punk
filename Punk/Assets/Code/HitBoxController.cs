@@ -25,7 +25,7 @@ namespace Punk
             // Check for collision with enemy
             if (other.CompareTag("Enemy"))
             {
-                // Check if player is attacking (if you wish to add this condition)
+                // Check if player is attacking
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                 {
                     // Destroy the enemy
