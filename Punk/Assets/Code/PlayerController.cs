@@ -2,23 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Punk
 {
     public class PlayerController : MonoBehaviour
     {
-        // Outlet
+        // Outlets
         Rigidbody2D _rigidbody2D;
         SpriteRenderer sprite;
         Animator animator;
+        public Image healthBar;
+        public Sprite[] healthStates;
 
         // State Tracking
         public int jumpsLeft;
         public bool canDash;
         public float dashTimer;
         public bool isDashing;
+        public bool isInvincible;
+        private float invincibleTimer;
+        public int health;
         private Vector2 savedVelocity; //for dashing
         private bool facingRight;
+        
 
         // Methods (Start is called before the first frame update)
         void Start()
@@ -26,6 +33,8 @@ namespace Punk
             _rigidbody2D = GetComponent<Rigidbody2D>();
             sprite = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            health = 3;
+            canDash = true;
         }
 
         void FixedUpdate()
@@ -47,9 +56,12 @@ namespace Punk
         {
 
             float defaultSpeed = 18f;
-            //float speedMultiplier = 1.5f;
-            dashTimer -= Time.deltaTime;
+            //Only lessen timers if they are positive to avoid underflow
+            dashTimer -= (dashTimer > 0f) ? Time.deltaTime : 0f;
+            invincibleTimer -= (invincibleTimer > 0f) ? Time.deltaTime : 0f;
             if (dashTimer < 0) canDash = true;
+            if (invincibleTimer > 0f) isInvincible = true;
+            else isInvincible = false;
 
             float currentSpeed = defaultSpeed;
 
@@ -61,11 +73,7 @@ namespace Punk
                 animator.SetBool("Is Dashing", false);
             }
 
-            // Run
-            /*if (Input.GetKey(KeyCode.LeftShift))
-            {
-                currentSpeed *= speedMultiplier;
-            }*/
+            
 
             // Move Player Left
             if (Input.GetKey(KeyCode.A))
@@ -153,14 +161,32 @@ namespace Punk
             }
 
             //Colliding with enemy
-            if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing)
+            if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing && !isInvincible)
             {
-                Die();
+                if(other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
+                TakeDamage(1);
             }
         }
 
+        //Take Damage and set image
+        void TakeDamage(int dmg)
+        {
+            health -= dmg;
 
-        //TODO: Change what Die() does, right now it just resets scene
+            if (health <= 0)
+            {
+                healthBar.sprite = healthStates[0];
+                Die();
+            }
+            else
+            {
+                healthBar.sprite = healthStates[health];
+            }
+
+            invincibleTimer = 1f;
+        }
+
+        // TODO: Change what Die() does, right now it just resets scene
         void Die()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
