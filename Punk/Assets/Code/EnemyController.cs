@@ -39,6 +39,8 @@ namespace Punk
 
         void Update()
         {
+            if (MenuController.instance.isPaused) return;
+
             float defaultSpeed = 12f;
             Vector2 directionToPlayer = player.transform.position - transform.position;
 

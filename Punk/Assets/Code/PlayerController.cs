@@ -8,6 +8,8 @@ namespace Punk
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController instance;
+
         // Outlets
         Rigidbody2D _rigidbody2D;
         SpriteRenderer sprite;
@@ -36,6 +38,10 @@ namespace Punk
             health = 3;
             canDash = true;
         }
+        void Awake()
+        {
+            instance = this;
+        }
 
         void FixedUpdate()
         {
@@ -54,6 +60,7 @@ namespace Punk
         // Update is called once per frame
         void Update()
         {
+            if (MenuController.instance.isPaused) return;
 
             float defaultSpeed = 18f;
             //Only lessen timers if they are positive to avoid underflow
@@ -78,6 +85,12 @@ namespace Punk
             {
                 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
                 Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), false);
+            }
+
+            //Open Menu
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                MenuController.instance.Show();
             }
 
             // Move Player Left
