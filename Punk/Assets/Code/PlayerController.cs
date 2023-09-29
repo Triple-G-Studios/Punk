@@ -59,7 +59,7 @@ namespace Punk
             //Only lessen timers if they are positive to avoid underflow
             dashTimer -= (dashTimer > 0f) ? Time.deltaTime : 0f;
             invincibleTimer -= (invincibleTimer > 0f) ? Time.deltaTime : 0f;
-            if (dashTimer < 0) canDash = true;
+            if (dashTimer <= 0) canDash = true;
             if (invincibleTimer > 0f) isInvincible = true;
             else isInvincible = false;
 
@@ -73,7 +73,12 @@ namespace Punk
                 animator.SetBool("Is Dashing", false);
             }
 
-            
+            //a lil extra time to move thru stuff
+            if (dashTimer <= 1.3f)
+            {
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), false);
+            }
 
             // Move Player Left
             if (Input.GetKey(KeyCode.A))
@@ -104,6 +109,8 @@ namespace Punk
                     isDashing = true;
                     dashTimer = 1.5f;
                     animator.SetBool("Is Dashing", true);
+                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), true);
                 }
             }
 
