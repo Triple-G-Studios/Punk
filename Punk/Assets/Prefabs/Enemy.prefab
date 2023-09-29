@@ -148,6 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdf67add0b40a44d8ac4834bb179ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 0}
+  visionRange: 5
+  shootInterval: 2
+  directionLeft: 0
 --- !u!70 &-1682880585590994617
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

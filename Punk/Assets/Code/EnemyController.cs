@@ -6,6 +6,8 @@ namespace Punk
 {
     public class EnemyController : MonoBehaviour
     {
+        public static EnemyController instance;
+
         // Outlet
         Rigidbody2D _rb;
         SpriteRenderer sprite;
@@ -18,7 +20,12 @@ namespace Punk
         private float lastShootTime;
 
         // State Tracking
-        bool directionLeft;
+        public bool directionLeft;
+
+        void Awake()
+        {
+            instance = this;
+        }
 
         void Start()
         {
@@ -56,6 +63,7 @@ namespace Punk
                     Vector3 theScale = transform.localScale;
                     theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
                     transform.localScale = theScale;
+                    // print("WORKING");
                     //sprite.flipX = true;
                 }
                 else
@@ -90,12 +98,12 @@ namespace Punk
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        /*public void OnCollisionEnter2D(Collision2D other)
         {
             if (!other.gameObject.GetComponent<PlayerController>())
             {
                 directionLeft = !directionLeft;
             }
-        }
+        }*/
     }
 }
