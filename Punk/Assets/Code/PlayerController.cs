@@ -16,6 +16,8 @@ namespace Punk
         Animator animator;
         public Image healthBar;
         public Sprite[] healthStates;
+        public GameObject musicNotePrefab;
+        public Transform aimPivot;
 
         // State Tracking
         public int jumpsLeft;
@@ -27,7 +29,6 @@ namespace Punk
         public int health;
         private Vector2 savedVelocity; //for dashing
         private bool facingRight;
-        
 
         // Methods (Start is called before the first frame update)
         void Start()
@@ -142,6 +143,25 @@ namespace Punk
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 animator.SetTrigger("Attack");
+            }
+
+            // Aim Toward Mouse
+            Vector3 mousePosition = Input.mousePosition;
+            Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePosition);
+            Vector3 directionFromPlayerToMouse = mousePositionInWorld - transform.position;
+
+            float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
+            float angleToMouse = radiansToMouse * Mathf.Rad2Deg;
+
+            aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
+
+            // Shoot
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                GameObject newProjectile = Instantiate(musicNotePrefab);
+                newProjectile.transform.position = transform.position;
+                newProjectile.transform.rotation = aimPivot.rotation;
+                animator.SetTrigger("Shoot");
             }
 
             print(animator.speed);
