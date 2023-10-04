@@ -42,7 +42,7 @@ namespace Punk
         void Awake()
         {
             instance = this;
-            loadData();
+            if(PlayerPrefs.HasKey("health")) loadData();
         }
 
         void FixedUpdate()
