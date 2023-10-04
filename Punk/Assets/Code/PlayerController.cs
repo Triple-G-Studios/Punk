@@ -42,6 +42,7 @@ namespace Punk
         void Awake()
         {
             instance = this;
+            loadData();
         }
 
         void FixedUpdate()
@@ -231,6 +232,19 @@ namespace Punk
         void Die()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        public void saveData()
+        {
+            PlayerPrefs.SetInt("health", health);
+
+        }
+
+        //Load all fields from
+        public void loadData()
+        {
+            health = PlayerPrefs.GetInt("health");
+            TakeDamage(0);
         }
     }
 }

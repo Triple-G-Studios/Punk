@@ -13,6 +13,7 @@ namespace Punk
         {
             if (other.gameObject.GetComponent<PlayerController>())
             {
+                other.gameObject.GetComponent<PlayerController>().saveData();
                 SceneManager.LoadScene(toLevel);
             }
         }
