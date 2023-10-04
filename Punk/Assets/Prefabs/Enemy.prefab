@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdf67add0b40a44d8ac4834bb179ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 8917535618494782669, guid: 391d588a68a8848a48b97b64534f8803, type: 3}
   visionRange: 5
   shootInterval: 2
   directionLeft: 0
