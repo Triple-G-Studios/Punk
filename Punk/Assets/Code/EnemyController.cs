@@ -65,7 +65,7 @@ namespace Punk
 
 
 
-                    if (Time.time - lastShootTime >= shootInterval)
+                    if (Time.time - lastShootTime >= shootInterval && directionToPlayer.magnitude <= visionRange)
                         {
                             ShootLaser();
                             lastShootTime = Time.time;
