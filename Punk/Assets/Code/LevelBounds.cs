@@ -7,11 +7,13 @@ namespace Punk
 {
     public class LevelBounds : MonoBehaviour
     {
+
+        public string toLevel;
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.GetComponent<PlayerController>())
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(toLevel);
             }
         }
     }
