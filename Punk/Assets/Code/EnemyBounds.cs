@@ -11,7 +11,6 @@ namespace Punk
             if (other.gameObject.GetComponent<EnemyController>())
             {
                 other.gameObject.GetComponent<EnemyController>().directionLeft = !other.gameObject.GetComponent<EnemyController>().directionLeft;
-                // EnemyController.instance.directionLeft = !EnemyController.instance.directionLeft;
             }
         }
     }
