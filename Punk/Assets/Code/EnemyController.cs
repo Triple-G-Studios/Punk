@@ -44,21 +44,40 @@ namespace Punk
             float defaultSpeed = 12f;
             Vector2 directionToPlayer = player.transform.position - transform.position;
 
-            if (directionToPlayer.magnitude <= visionRange)
-            {
-                _rb.velocity = Vector2.zero;
-                animator.SetFloat("Speed", 0);
-                animator.SetBool("Is Attacking", true);
+            Debug.DrawRay(transform.position, (transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f), Color.green); // Visualize Raycast
 
 
-                if (Time.time - lastShootTime >= shootInterval)
+                Vector2 forward = transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f;
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, forward, 4f);
+
+                //We might have multiple things below our character's feet
+                for (int i = 0; i < hits.Length; i++)
                 {
-                    ShootLaser();
-                    lastShootTime = Time.time;
+                    RaycastHit2D hit = hits[i];
+
+                    // Check that we collided with ground below our feet
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+                    {
+                        _rb.velocity = Vector2.zero;
+                        //animator.SetFloat("Speed", 0);
+                        animator.SetBool("SpeedBool", false);
+
+
+
+
+                    if (Time.time - lastShootTime >= shootInterval)
+                        {
+                            ShootLaser();
+                            lastShootTime = Time.time;
+                            animator.SetTrigger("Attack");
+                            //animator.SetBool("isAttacking", true);
+
+                    }
                 }
-            }
-            else
-            {
+
+                }
+                                    
+            
                 if (directionLeft)
                 {
                     _rb.AddForce(Vector2.left * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
@@ -77,10 +96,15 @@ namespace Punk
                     //sprite.flipX = false;
                 }
 
-                animator.SetFloat("Speed", _rb.velocity.magnitude);
+                //animator.SetFloat("Speed", _rb.velocity.magnitude);
+                animator.SetBool("SpeedBool", true);
                 animator.SetBool("Is Attacking", false);
 
-            }
+            
+
+
+
+
         }
 
         void ShootLaser()
