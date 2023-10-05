@@ -207,6 +207,7 @@ namespace Punk
                 if(other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
                 TakeDamage(1);
                 animator.SetTrigger("Hurt");
+                SoundManager.instance.PlaySoundHurt();
             }
         }
 

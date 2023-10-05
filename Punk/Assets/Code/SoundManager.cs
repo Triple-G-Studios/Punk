@@ -10,7 +10,7 @@ namespace Punk
 
         // Outlet
         AudioSource audioSource;
-        public AudioClip hitSound;
+        public AudioClip slashSound;
         public AudioClip hurtSound;
 
         void Awake()
@@ -23,9 +23,9 @@ namespace Punk
             audioSource = GetComponent<AudioSource>();
         }
 
-        public void PlaySoundHit()
+        public void PlaySoundSlash()
         {
-            audioSource.PlayOneShot(hitSound);
+            audioSource.PlayOneShot(slashSound);
         }
 
         public void PlaySoundHurt()

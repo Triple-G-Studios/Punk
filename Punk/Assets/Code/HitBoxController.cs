@@ -28,6 +28,7 @@ namespace Punk
                 // Check if player is attacking
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
                 {
+                    SoundManager.instance.PlaySoundSlash();
                     // Destroy the enemy
                     Destroy(other.gameObject);
                 }
