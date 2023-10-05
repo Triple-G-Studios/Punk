@@ -118,7 +118,7 @@ namespace Punk
             {
                 if (canDash)
                 {
-                    SoundManager.instance.PlaySoundWhoosh();
+                    // SoundManager.instance.PlaySoundWhoosh();
                     savedVelocity = _rigidbody2D.velocity;
                     _rigidbody2D.velocity = new Vector2((_rigidbody2D.velocity.x + (sprite.flipX?-2f:2f)) * 5f, _rigidbody2D.velocity.y);
                     canDash = false;
