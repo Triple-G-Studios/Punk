@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3188f7c25741c0a330d49a4e46b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1253536669}
   healthStates:
   - {fileID: 21300000, guid: 13b33b584b3674d499838f5374ec7bd2, type: 3}
   - {fileID: 21300000, guid: 131833653e65d1c4fb18cec21f41a82a, type: 3}
@@ -225,7 +225,7 @@ MonoBehaviour:
   dashTimer: 0
   isDashing: 0
   isInvincible: 0
-  health: 0
+  health: 3
 --- !u!50 &53587203
 Rigidbody2D:
   serializedVersion: 4
@@ -812,6 +812,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253536669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6679383312220183235, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
+  m_PrefabInstance: {fileID: 661935001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1284065712
 PrefabInstance:
   m_ObjectHideFlags: 0

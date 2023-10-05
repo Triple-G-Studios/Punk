@@ -245,7 +245,6 @@ namespace Punk
         public void loadData()
         {
             health = PlayerPrefs.GetInt("health");
-            TakeDamage(0);
         }
     }
 }
