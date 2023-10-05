@@ -1171,11 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690fc4e55755b424fa91e3ecba1cf119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   slashSound: {fileID: 8300000, guid: 723d5549048b09848ae0aa7358922d09, type: 3}
-=======
-  hitSound: {fileID: 8300000, guid: 723d5549048b09848ae0aa7358922d09, type: 3}
->>>>>>> Stashed changes
   hurtSound: {fileID: 8300000, guid: 5f6e2dd5de60f1248ac6292d4b5cf0a5, type: 3}
   shootSound: {fileID: 8300000, guid: 27ff79924f5bc9640a6abe4b8d77a545, type: 3}
 --- !u!4 &885450772
