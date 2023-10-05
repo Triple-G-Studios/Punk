@@ -118,6 +118,7 @@ namespace Punk
             {
                 if (canDash)
                 {
+                    SoundManager.instance.PlaySoundWhoosh();
                     savedVelocity = _rigidbody2D.velocity;
                     _rigidbody2D.velocity = new Vector2((_rigidbody2D.velocity.x + (sprite.flipX?-2f:2f)) * 5f, _rigidbody2D.velocity.y);
                     canDash = false;
@@ -135,6 +136,7 @@ namespace Punk
                 if (jumpsLeft > 0)
                 {
                     jumpsLeft--;
+                    SoundManager.instance.PlaySoundJump();
                     _rigidbody2D.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
                 }
             }
@@ -219,7 +221,9 @@ namespace Punk
             if (health <= 0)
             {
                 healthBar.sprite = healthStates[0];
-                Die();
+                SoundManager.instance.PlaySoundGameOver();
+                Invoke("Die", 1);
+               // Die();
             }
             else
             {
@@ -231,7 +235,7 @@ namespace Punk
 
         // TODO: Change what Die() does, right now it just resets scene
         void Die()
-        {
+        {            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

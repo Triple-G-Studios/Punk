@@ -12,6 +12,9 @@ namespace Punk
         AudioSource audioSource;
         public AudioClip slashSound;
         public AudioClip hurtSound;
+        public AudioClip whooshSound;
+        public AudioClip gameOverSound;
+        public AudioClip jumpSound;
 
         void Awake()
         {
@@ -31,6 +34,21 @@ namespace Punk
         public void PlaySoundHurt()
         {
             audioSource.PlayOneShot(hurtSound);
+        }
+
+        public void PlaySoundWhoosh()
+        {
+            audioSource.PlayOneShot(whooshSound);
+        }
+
+        public void PlaySoundGameOver()
+        {
+            audioSource.PlayOneShot(gameOverSound);
+        }
+
+        public void PlaySoundJump()
+        {
+            audioSource.PlayOneShot(jumpSound);
         }
     }
 }
