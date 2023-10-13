@@ -9,10 +9,23 @@ namespace Punk
         // Outlets
         Rigidbody2D _rigidbody2D;
 
+        //State tracking
+        public float existFor;
+
         void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _rigidbody2D.velocity = transform.right * 10f;
+            existFor = PlayerController.instance.projectileDistanceTimer;
+        }
+
+        void Update()
+        {
+            existFor -= Time.deltaTime;
+            if ( existFor < 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
         void OnCollisionEnter2D(Collision2D other)

@@ -30,6 +30,10 @@ namespace Punk
         private Vector2 savedVelocity; //for dashing
         private bool facingRight;
 
+        //Upgradables
+        public float projectileDistanceTimer;
+        public float damageMultiplier;
+
         // Methods (Start is called before the first frame update)
         void Start()
         {
