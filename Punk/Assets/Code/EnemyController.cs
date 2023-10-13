@@ -130,6 +130,7 @@ namespace Punk
         public void TakeHit(float damage)
         {
             _rb.velocity = Vector2.zero;
+            animator.SetTrigger("Hurt");
             curHealth -= damage;
             if(curHealth <= 0) {
                 Destroy(gameObject);
