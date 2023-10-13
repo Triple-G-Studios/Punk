@@ -42,6 +42,7 @@ namespace Punk
             animator = GetComponent<Animator>();
             health = 3;
             canDash = true;
+            facingRight = true;
         }
         void Awake()
         {
@@ -103,18 +104,15 @@ namespace Punk
             if (Input.GetKey(KeyCode.A))
             {
                 _rigidbody2D.AddForce(Vector2.left * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                Vector3 theScale = transform.localScale;
-                theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
-                transform.localScale = theScale;
+                Flip(false);
+
             }
 
             // Move Player Right
             if (Input.GetKey(KeyCode.D))
             {
                 _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-                Vector3 theScale = transform.localScale;
-                theScale.x = Mathf.Abs(theScale.x); // Ensure it's always positive when moving right
-                transform.localScale = theScale;
+                Flip(true);
             }
 
             // Dash
@@ -124,7 +122,8 @@ namespace Punk
                 {
                     // SoundManager.instance.PlaySoundWhoosh();
                     savedVelocity = _rigidbody2D.velocity;
-                    _rigidbody2D.velocity = new Vector2((_rigidbody2D.velocity.x + (sprite.flipX?-2f:2f)) * 5f, _rigidbody2D.velocity.y);
+                    float dashForce = facingRight ? 50f : -50f;
+                    _rigidbody2D.velocity = new Vector2(dashForce, _rigidbody2D.velocity.y);
                     canDash = false;
                     isDashing = true;
                     dashTimer = 1.5f;
@@ -141,6 +140,7 @@ namespace Punk
                 {
                     jumpsLeft--;
                     SoundManager.instance.PlaySoundJump();
+                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0);
                     _rigidbody2D.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
                 }
             }
@@ -171,16 +171,14 @@ namespace Punk
                 animator.SetTrigger("Shoot");
             }
 
-            print(animator.speed);
         }
 
-        void Flip()
+        void Flip(bool right)
         {
-            // Switch the way the player is labelled as facing
-            facingRight = !facingRight;
+            facingRight = right ? true : false;
             // Multiply the player's x local scale by -1
             Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
+            theScale.x = facingRight ? Mathf.Abs(theScale.x) : Mathf.Abs(theScale.x) * -1;
             transform.localScale = theScale;
         }
 

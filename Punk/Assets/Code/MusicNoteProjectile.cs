@@ -28,8 +28,14 @@ namespace Punk
             }
         }
 
-        void OnCollisionEnter2D(Collision2D other)
+        void OnCollisionEnter2D(Collision2D collision)
         {
+            var enemy = collision.collider.GetComponent<EnemyController>();
+            if (enemy)
+            {
+                enemy.TakeHit(1);
+            }
+
             Destroy(gameObject);
         }
     }
