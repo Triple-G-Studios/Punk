@@ -15,8 +15,14 @@ namespace Punk
             _rigidbody2D.velocity = transform.right * 10f;
         }
 
-        void OnCollisionEnter2D(Collision2D other)
+        void OnCollisionEnter2D(Collision2D collision)
         {
+            var enemy = collision.collider.GetComponent<EnemyController>();
+            if (enemy)
+            {
+                enemy.TakeHit(1);
+            }
+
             Destroy(gameObject);
         }
     }

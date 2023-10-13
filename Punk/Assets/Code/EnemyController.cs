@@ -21,6 +21,8 @@ namespace Punk
 
         // State Tracking
         public bool directionLeft;
+        public float curHealth;
+        public float maxHealth = 3;
 
         void Awake()
         {
@@ -33,6 +35,7 @@ namespace Punk
             sprite = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             directionLeft = true;
+            curHealth = maxHealth;
 
             player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -44,7 +47,7 @@ namespace Punk
             float defaultSpeed = 12f;
             Vector2 directionToPlayer = player.transform.position - transform.position;
 
-            Debug.DrawRay(transform.position, (transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f), Color.green); // Visualize Raycast
+            // Debug.DrawRay(transform.position, (transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f), Color.green); // Visualize Raycast
 
 
                 Vector2 forward = transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f;
@@ -124,12 +127,21 @@ namespace Punk
             }
         }
 
-        public void OnCollisionEnter2D(Collision2D other)
+        public void TakeHit(float damage)
+        {
+            _rb.velocity = Vector2.zero;
+            curHealth -= damage;
+            if(curHealth <= 0) {
+                Destroy(gameObject);
+            }
+        }
+
+       /* public void OnCollisionEnter2D(Collision2D other)
         {
             if(other.gameObject.GetComponent<MusicNoteProjectile>())
             {
                 Destroy(gameObject);
             }
-        }
+        }*/
     }
 }
