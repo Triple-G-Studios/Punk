@@ -21,6 +21,7 @@ namespace Punk
 
         // State Tracking
         public int jumpsLeft;
+        public int ammoLeft;
         public bool canDash;
         public float dashTimer;
         public bool isDashing;
@@ -165,12 +166,15 @@ namespace Punk
             // Shoot
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                GameObject newProjectile = Instantiate(musicNotePrefab);
-                newProjectile.transform.position = transform.position;
-                newProjectile.transform.rotation = aimPivot.rotation;
-                animator.SetTrigger("Shoot");
+                if (ammoLeft > 0)
+                {
+                    GameObject newProjectile = Instantiate(musicNotePrefab);
+                    newProjectile.transform.position = transform.position;
+                    newProjectile.transform.rotation = aimPivot.rotation;
+                    animator.SetTrigger("Shoot");
+                    ammoLeft -= 1;
+                }
             }
-
         }
 
         void Flip(bool right)
@@ -200,12 +204,12 @@ namespace Punk
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
                     {
                         // Reset jump count
-                        jumpsLeft = 2;
+                        jumpsLeft = 1;
                     }
                 }
             }
 
-            //Colliding with enemy
+            // Colliding with enemy
             if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing && !isInvincible)
             {
                 if(other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
@@ -213,6 +217,7 @@ namespace Punk
                 animator.SetTrigger("Hurt");
                 SoundManager.instance.PlaySoundHurt();
             }
+
         }
 
         //Take Damage and set image
@@ -245,6 +250,11 @@ namespace Punk
         {
             PlayerPrefs.SetInt("health", health);
 
+        }
+
+        public void getAmmo(int ammoAmt)
+        {
+            ammoLeft += ammoAmt;
         }
 
         //Load all fields from

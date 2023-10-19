@@ -65,9 +65,6 @@ namespace Punk
                         //animator.SetFloat("Speed", 0);
                         animator.SetBool("SpeedBool", false);
 
-
-
-
                     if (Time.time - lastShootTime >= shootInterval && directionToPlayer.magnitude <= visionRange)
                         {
                             ShootLaser();
@@ -102,11 +99,6 @@ namespace Punk
                 //animator.SetFloat("Speed", _rb.velocity.magnitude);
                 animator.SetBool("SpeedBool", true);
                 animator.SetBool("Is Attacking", false);
-
-            
-
-
-
 
         }
 
