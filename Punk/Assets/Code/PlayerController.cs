@@ -142,7 +142,7 @@ namespace Punk
                     jumpsLeft--;
                     SoundManager.instance.PlaySoundJump();
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0);
-                    _rigidbody2D.AddForce(Vector2.up * 15f, ForceMode2D.Impulse);
+                    _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
             }
             animator.SetInteger("JumpsLeft", jumpsLeft);
