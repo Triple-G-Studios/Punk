@@ -153,7 +153,7 @@ MonoBehaviour:
   shootInterval: 2
   directionLeft: 0
   curHealth: 0
-  maxHealth: 3
+  maxHealth: 1
 --- !u!70 &4093943128439378684
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

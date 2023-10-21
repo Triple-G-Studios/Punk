@@ -22,7 +22,7 @@ namespace Punk
         // State Tracking
         public bool directionLeft;
         public float curHealth;
-        public float maxHealth = 3;
+        public float maxHealth = 1;
 
         void Awake()
         {

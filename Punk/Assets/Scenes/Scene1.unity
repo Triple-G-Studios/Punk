@@ -1592,7 +1592,7 @@ MonoBehaviour:
   isDashing: 0
   isInvincible: 0
   health: 0
-  projectileDistanceTimer: 0.3
+  projectileDistanceTimer: 1
   damageMultiplier: 1
 --- !u!50 &1094201968
 Rigidbody2D:
