@@ -33,7 +33,21 @@ namespace Punk
                     Destroy(other.gameObject);
                 }
             }
+
+            else if (other.CompareTag("BossHitBox"))
+            {
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                {
+                    SoundManager.instance.PlaySoundSlash();
+                    GreenBossRobotController boss = other.GetComponentInParent<GreenBossRobotController>();
+                    if (boss != null)
+                    {
+                        boss.TakeHit(1);
+                    }
+                }
+            }
         }
+
     }
 }
 

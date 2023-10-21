@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Laser
+  - Boss
+  - BossHitBox
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -20,10 +23,10 @@ TagManager:
   - Player
   - Enemy
   - Projectile
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Hitbox
+  - DeadBoss
+  - DeathBox
   - 
   - 
   - 

@@ -189,7 +189,7 @@ namespace Punk
         private void OnCollisionStay2D(Collision2D other)
         {
             // Check that we collided with Ground
-            if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            if (other.gameObject.layer == LayerMask.NameToLayer("Ground") || other.gameObject.layer == LayerMask.NameToLayer("Platform"))
             {
                 // Check what is directly below our character's feet
                 RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.down, 0.85f);
@@ -201,7 +201,7 @@ namespace Punk
                     RaycastHit2D hit = hits[i];
 
                     // Check that we collided with ground below our feet
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground") || hit.collider.gameObject.layer == LayerMask.NameToLayer("Platform"))
                     {
                         // Reset jump count
                         jumpsLeft = 1;
@@ -218,6 +218,22 @@ namespace Punk
                 SoundManager.instance.PlaySoundHurt();
             }
 
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("DeathBox") && !isDashing && !isInvincible)
+            {
+                animator.SetTrigger("Hurt");
+                SoundManager.instance.PlaySoundGameOver();
+                Invoke("Die", 1);
+            }
+            if (other.gameObject.CompareTag("BossBullet") && !isDashing && !isInvincible)
+            {
+                TakeDamage(1);
+                animator.SetTrigger("Hurt");
+                SoundManager.instance.PlaySoundHurt();
+            }
         }
 
         //Take Damage and set image

@@ -12,6 +12,11 @@ namespace Punk
             {
                 other.gameObject.GetComponent<EnemyController>().directionLeft = !other.gameObject.GetComponent<EnemyController>().directionLeft;
             }
+
+            if (other.gameObject.GetComponent<GreenBossRobotController>())
+            {
+                other.gameObject.GetComponent<GreenBossRobotController>().directionLeft = !other.gameObject.GetComponent<GreenBossRobotController>().directionLeft;
+            }
         }
     }
 }
