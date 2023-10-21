@@ -7,7 +7,7 @@ namespace Punk
     public class LaserController : MonoBehaviour
     {
         //State Tracking
-        public float existFor;
+        public float existFor = 5;
 
         void Update()
         {
