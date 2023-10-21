@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 5f5f2a5f7c48c144380fadabc28ef132
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 6625d882317d4fc4d8090b752e6bd911
+  - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: 55708196807dc4ffc8536d228ce83015
   - enabled: 0
@@ -17,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: 616201a0400eb454996ec69f5effe7c0
+  - enabled: 0
+    path: Assets/Scenes/Boss.unity
+    guid: 214084a6ebd89412fb21e9563cb5d800
   m_configObjects: {}

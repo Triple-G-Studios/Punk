@@ -10,7 +10,7 @@ namespace Punk
         Rigidbody2D _rigidbody2D;
 
         //State tracking
-        public float existFor;
+        public float existFor = 1;
 
         void Start()
         {
