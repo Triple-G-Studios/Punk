@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Punk
 {
@@ -18,6 +19,7 @@ namespace Punk
         public Sprite[] healthStates;
         public GameObject musicNotePrefab;
         public Transform aimPivot;
+        public TMP_Text ammoText;
 
         // State Tracking
         public int jumpsLeft;
@@ -173,6 +175,7 @@ namespace Punk
                     newProjectile.transform.rotation = aimPivot.rotation;
                     animator.SetTrigger("Shoot");
                     ammoLeft -= 1;
+                    updateDisplay();
                 }
             }
         }
@@ -271,12 +274,18 @@ namespace Punk
         public void getAmmo(int ammoAmt)
         {
             ammoLeft += ammoAmt;
+            updateDisplay();
         }
 
         //Load all fields from
         public void loadData()
         {
             health = PlayerPrefs.GetInt("health");
+        }
+
+        void updateDisplay()
+        {
+            ammoText.text = "Left: " + ammoLeft.ToString();
         }
     }
 }

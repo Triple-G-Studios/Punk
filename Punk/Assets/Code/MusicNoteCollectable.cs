@@ -21,7 +21,7 @@ namespace Punk
 
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
+        void OnTriggerEnter2D()
         {
             PlayerController.instance.getAmmo(1);
             Destroy(gameObject);
