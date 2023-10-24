@@ -32,6 +32,7 @@ namespace Punk
         public int health;
         private Vector2 savedVelocity; //for dashing
         private bool facingRight;
+        public bool sfxPlaying = false;
 
         //Upgradables
         public float projectileDistanceTimer;
@@ -50,7 +51,7 @@ namespace Punk
         void Awake()
         {
             instance = this;
-            if(PlayerPrefs.HasKey("health")) loadData();
+            if (PlayerPrefs.HasKey("health")) loadData();
         }
 
         void FixedUpdate()
@@ -98,7 +99,7 @@ namespace Punk
             }
 
             //Open Menu
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 MenuController.instance.Show();
             }
@@ -215,7 +216,7 @@ namespace Punk
             // Colliding with enemy
             if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing && !isInvincible)
             {
-                if(other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
+                if (other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
                 TakeDamage(1);
                 animator.SetTrigger("Hurt");
                 SoundManager.instance.PlaySoundHurt();
@@ -228,6 +229,7 @@ namespace Punk
             if (other.gameObject.layer == LayerMask.NameToLayer("DeathBox") && !isDashing && !isInvincible)
             {
                 animator.SetTrigger("Hurt");
+                sfxPlaying = true;
                 SoundManager.instance.PlaySoundGameOver();
                 Invoke("Die", 1);
             }
@@ -247,9 +249,10 @@ namespace Punk
             if (health <= 0)
             {
                 healthBar.sprite = healthStates[0];
+                sfxPlaying = true;
                 SoundManager.instance.PlaySoundGameOver();
                 Invoke("Die", 1);
-               // Die();
+                // Die();
             }
             else
             {
@@ -261,7 +264,8 @@ namespace Punk
 
         // TODO: Change what Die() does, right now it just resets scene
         void Die()
-        {            
+        {
+            sfxPlaying = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -289,4 +293,3 @@ namespace Punk
         }
     }
 }
-
