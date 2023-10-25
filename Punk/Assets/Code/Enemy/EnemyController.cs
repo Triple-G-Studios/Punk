@@ -36,7 +36,6 @@ namespace Punk
             animator = GetComponent<Animator>();
             directionLeft = true;
             curHealth = maxHealth;
-
             player = GameObject.FindGameObjectWithTag("Player");
         }
 
@@ -48,7 +47,6 @@ namespace Punk
             Vector2 directionToPlayer = player.transform.position - transform.position;
 
             // Debug.DrawRay(transform.position, (transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f), Color.green); // Visualize Raycast
-
 
                 Vector2 forward = transform.TransformDirection(directionLeft ? Vector2.left : Vector2.right) * 4f;
                 RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, forward, 4f);
@@ -62,29 +60,24 @@ namespace Punk
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                     {
                         _rb.velocity = Vector2.zero;
-                        //animator.SetFloat("Speed", 0);
+                        animator.SetFloat("Speed", 0f);
                         animator.SetBool("SpeedBool", false);
 
-                    if (Time.time - lastShootTime >= shootInterval && directionToPlayer.magnitude <= visionRange)
-                        {
-                            ShootLaser();
+                        if (Time.time - lastShootTime >= shootInterval && directionToPlayer.magnitude <= visionRange)
+                            {
                             lastShootTime = Time.time;
-                            animator.SetTrigger("Attack");
-                            //animator.SetBool("isAttacking", true);
-
+                            animator.SetBool("IsAttacking", true);
+                            Invoke("ShootLaser", 1);
+                        }
                     }
                 }
-
-                }
                                     
-            
                 if (directionLeft)
                 {
                     _rb.AddForce(Vector2.left * defaultSpeed * Time.deltaTime, ForceMode2D.Impulse);
                     Vector3 theScale = transform.localScale;
                     theScale.x = Mathf.Abs(theScale.x) * -1; // Ensure it's always negative when moving left
                     transform.localScale = theScale;
-                    // print("WORKING");
                     //sprite.flipX = true;
                 }
                 else
@@ -98,7 +91,7 @@ namespace Punk
 
                 //animator.SetFloat("Speed", _rb.velocity.magnitude);
                 animator.SetBool("SpeedBool", true);
-                animator.SetBool("Is Attacking", false);
+                animator.SetBool("IsAttacking", false);
 
         }
 
@@ -109,14 +102,11 @@ namespace Punk
             Rigidbody2D laserRb = laser.GetComponent<Rigidbody2D>();
 
             float laserSpeed = 5f;
-            if (directionLeft)
-            {
-                laserRb.velocity = Vector2.left * laserSpeed;
-            }
-            else
-            {
-                laserRb.velocity = Vector2.right * laserSpeed;
-            }
+            animator.SetTrigger("Attack");
+            laserRb.velocity = directionLeft ? (Vector2.left * laserSpeed) : (Vector2.right * laserSpeed);
+            animator.SetBool("IsAttacking", false);
+            animator.SetBool("SpeedBool", true);
+
         }
 
         public void TakeHit(float damage)
@@ -128,13 +118,5 @@ namespace Punk
                 Destroy(gameObject);
             }
         }
-
-       /* public void OnCollisionEnter2D(Collision2D other)
-        {
-            if(other.gameObject.GetComponent<MusicNoteProjectile>())
-            {
-                Destroy(gameObject);
-            }
-        }*/
     }
 }
