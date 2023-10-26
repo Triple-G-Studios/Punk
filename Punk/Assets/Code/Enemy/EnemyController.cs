@@ -64,10 +64,11 @@ namespace Punk
                         animator.SetBool("SpeedBool", false);
 
                         if (Time.time - lastShootTime >= shootInterval && directionToPlayer.magnitude <= visionRange)
-                            {
+                        {
+                            animator.SetTrigger("Attack");
+                            Invoke("ShootLaser", 0.5f);
                             lastShootTime = Time.time;
-                            animator.SetBool("IsAttacking", true);
-                            Invoke("ShootLaser", 1);
+                            // animator.SetBool("IsAttacking", true);
                         }
                     }
                 }
@@ -102,7 +103,6 @@ namespace Punk
             Rigidbody2D laserRb = laser.GetComponent<Rigidbody2D>();
 
             float laserSpeed = 5f;
-            animator.SetTrigger("Attack");
             laserRb.velocity = directionLeft ? (Vector2.left * laserSpeed) : (Vector2.right * laserSpeed);
             animator.SetBool("IsAttacking", false);
             animator.SetBool("SpeedBool", true);

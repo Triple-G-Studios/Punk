@@ -214,7 +214,8 @@ namespace Punk
             }
 
             // Colliding with enemy
-            if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<IdleEnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing && !isInvincible)
+            if ((other.gameObject.GetComponent<EnemyController>() || other.gameObject.GetComponent<MeleeEnemyController>() 
+                || other.gameObject.GetComponent<IdleEnemyController>() || other.gameObject.GetComponent<LaserController>()) && !isDashing && !isInvincible)
             {
                 if (other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
                 TakeDamage(1);

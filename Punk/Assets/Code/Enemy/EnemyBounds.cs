@@ -13,6 +13,11 @@ namespace Punk
                 other.gameObject.GetComponent<EnemyController>().directionLeft = !other.gameObject.GetComponent<EnemyController>().directionLeft;
             }
 
+            if (other.gameObject.GetComponent<MeleeEnemyController>())
+            {
+                other.gameObject.GetComponent<MeleeEnemyController>().directionLeft = !other.gameObject.GetComponent<MeleeEnemyController>().directionLeft;
+            }
+
             if (other.gameObject.GetComponent<IdleEnemyController>())
             {
                 other.gameObject.GetComponent<IdleEnemyController>().directionLeft = !other.gameObject.GetComponent<IdleEnemyController>().directionLeft;
