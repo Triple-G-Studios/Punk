@@ -657,7 +657,7 @@ Transform:
   m_GameObject: {fileID: 133539173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.89, y: 5.34, z: 0}
+  m_LocalPosition: {x: 43.89, y: 5.34, z: 1}
   m_LocalScale: {x: 4.632949, y: 4.826085, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3871,7 +3871,7 @@ Transform:
   m_GameObject: {fileID: 1759953216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5393, y: 5.3513, z: 0}
+  m_LocalPosition: {x: 8.5393, y: 5.3513, z: 1}
   m_LocalScale: {x: 4.632949, y: 4.826085, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8344,8 +8344,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7775969458316189454, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8025888973630692667, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: a8c5b5b6de765d44ba52327ef11e90b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace Punk
@@ -27,6 +28,7 @@ namespace Punk
         public GameObject chestProjectilePrefab;
         public Transform normalShootSpawn;
         public Transform chestShootSpawn;
+        public string toLevel;
 
         //private float invincibilityDuration = 1.0f;
         //private float invincibilityTimer = 0; 
@@ -112,8 +114,6 @@ namespace Punk
             ShootProjectile(normalProjectilePrefab, normalShootSpawn, 10f, Vector3.zero);
             ShootProjectile(normalProjectilePrefab, normalShootSpawn, 10f, new Vector3(0.65f, 0, 0)); // 0.5 units to the right
             ShootProjectile(normalProjectilePrefab, normalShootSpawn, 10f, new Vector3(-0.65f, 0, 0)); // 0.5 units to the left
-
-
         }
 
         void ChestShoot()
@@ -175,11 +175,12 @@ namespace Punk
         public void TakeHit(float damage)
         {
             //if (isInvincible) return;
+            PlayerController.instance.sfxPlaying = true;
             BossEnemySoundManager.instance.PlaySoundDead();
             _rb.velocity = Vector2.zero;
             animator.SetTrigger("Dead");
 
-            SetToDeadLayer();
+            Invoke("SetToDeadLayer", 2);
 
             //curHealth -= damage;
             //if (curHealth <= 0)
@@ -200,8 +201,13 @@ namespace Punk
             {
                 child.gameObject.layer = deadBossLayer;
             }
+            SoundManager.instance.PlaySoundVictory();
+            Invoke("nextScene", 4);
         }
 
-
+        void nextScene()
+        {
+            SceneManager.LoadScene("Victory");
+        }
     }
 }
