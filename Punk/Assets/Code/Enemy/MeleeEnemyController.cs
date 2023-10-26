@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Punk;
 using UnityEngine;
 
 namespace Punk
@@ -16,6 +15,8 @@ namespace Punk
         GameObject player;
 
         public float visionRange = 5f;
+        public float swingInterval = 2f;
+        private float lastSwingTime;
 
         // State Tracking
         public bool directionLeft;
@@ -57,14 +58,18 @@ namespace Punk
                 // Check that we collided with ground below our feet
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
                 {
-                    _rb.velocity = Vector2.zero;
+                    /*_rb.velocity = Vector2.zero;
                     animator.SetFloat("Speed", 0f);
-                    animator.SetBool("SpeedBool", false);
+                    animator.SetBool("SpeedBool", false);*/
 
-                    if (directionToPlayer.magnitude <= visionRange)
+                    if (Time.time - lastSwingTime >= swingInterval && directionToPlayer.magnitude <= visionRange)
                     {
-                        Swing();
-                        // animator.SetBool("IsAttacking", true); 
+                        _rb.velocity = Vector2.zero;
+                        animator.SetFloat("Speed", 0f);
+                        animator.SetBool("SpeedBool", false);
+                        Invoke("Swing", 1f);
+                        lastSwingTime = Time.time;
+                        // animator.SetBool("IsAttacking", true);
                     }
                 }
             }
@@ -94,9 +99,12 @@ namespace Punk
 
         void Swing()
         {
-            animator.SetBool("IsAttacking", false);
+            float dashForce = !directionLeft ? 50f : -50f;
+            _rb.velocity = new Vector2(dashForce / 2, _rb.velocity.y / 2);
             animator.SetTrigger("Attack");
+            animator.SetBool("IsAttacking", false);
             animator.SetBool("SpeedBool", true);
+
         }
 
         public void TakeHit(float damage)
@@ -111,4 +119,3 @@ namespace Punk
         }
     }
 }
-
