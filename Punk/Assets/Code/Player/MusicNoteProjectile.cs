@@ -32,12 +32,16 @@ namespace Punk
         {
             var enemy = collision.collider.GetComponent<EnemyController>();
             var idleEnemy = collision.collider.GetComponent<IdleEnemyController>();
+            var meleeEnemy = collision.collider.GetComponent<MeleeEnemyController>();
             if (enemy)
             {
                 enemy.TakeHit(1);
             } else if (idleEnemy)
             {
                 idleEnemy.TakeHit(1);
+            } else if (meleeEnemy)
+            {
+                meleeEnemy.TakeHit(1);
             }
 
             Destroy(gameObject);
