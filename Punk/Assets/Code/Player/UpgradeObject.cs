@@ -39,21 +39,21 @@ namespace Punk
         public void upDash()
         {
             PlayerPrefs.SetFloat("dashMult", PlayerPrefs.GetFloat("dashMult") + .1f);
-            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 
         public void upSpeed()
         {
             PlayerPrefs.SetFloat("spMult", PlayerPrefs.GetFloat("spMult") + .1f);
-            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 
         public void upJump()
         {
             PlayerPrefs.SetFloat("jMult", PlayerPrefs.GetFloat("jMult") + .1f);
-            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 
