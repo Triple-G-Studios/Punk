@@ -6,34 +6,32 @@ namespace Punk
 {
     public class UpgradeObject : MonoBehaviour
     {
-        public string upgradeType;
-        public float upgradeAmount;
+        //this class does skill trees
+        public GameObject[] moshButtons;
+        public GameObject[] theoryButtons;
+        public GameObject[] presenceButtons;
+
 
         // Start is called before the first frame update
         void Start()
         {
-            
-        }
+            int mosh = PlayerPrefs.GetInt("mosh");
+            int theory = PlayerPrefs.GetInt("theory");
+            int presence = PlayerPrefs.GetInt("presence");
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.GetComponent<PlayerController>())
-            {
-                doUpgrade();
-                Destroy(gameObject);
+            for (int i = 0; i < moshButtons.Length; i++) {
+                if (i <= mosh) moshButtons[i].SetActive(true);
+                else moshButtons[i].SetActive(false);
             }
-        }
-
-        void doUpgrade()
-        {
-            if (upgradeType.Equals("distance"))
+            for (int i = 0; i < theoryButtons.Length; i++)
             {
-                PlayerController.instance.projectileDistanceTimer += upgradeAmount;
+                if (i <= theory) theoryButtons[i].SetActive(true);
+                else theoryButtons[i].SetActive(false);
             }
-
-            if (upgradeType.Equals("damage"))
+            for (int i = 0; i < presenceButtons.Length; i++)
             {
-                PlayerController.instance.damageMultiplier += upgradeAmount;
+                if (i <= presence) presenceButtons[i].SetActive(true);
+                else presenceButtons[i].SetActive(false);
             }
         }
     }

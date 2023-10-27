@@ -37,6 +37,13 @@ namespace Punk
         //Upgradables
         public float projectileDistanceTimer;
         public float damageMultiplier;
+        public float speedMultiplier;
+        public float dashMultiplier;
+        public float jumpMultiplier;
+        public int critOn;
+        public int moshScore;
+        public int theoryScore;
+        public int presenceScore;
 
         // Methods (Start is called before the first frame update)
         void Start()
@@ -51,7 +58,7 @@ namespace Punk
         void Awake()
         {
             instance = this;
-            if (PlayerPrefs.HasKey("health")) loadData();
+            loadData();
         }
 
         void FixedUpdate()
@@ -107,7 +114,7 @@ namespace Punk
             // Move Player Left
             if (Input.GetKey(KeyCode.A))
             {
-                _rigidbody2D.AddForce(Vector2.left * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
+                _rigidbody2D.AddForce(Vector2.left * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
                 Flip(false);
 
             }
@@ -115,7 +122,7 @@ namespace Punk
             // Move Player Right
             if (Input.GetKey(KeyCode.D))
             {
-                _rigidbody2D.AddForce(Vector2.right * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
+                _rigidbody2D.AddForce(Vector2.right * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
                 Flip(true);
             }
 
@@ -127,7 +134,7 @@ namespace Punk
                     // SoundManager.instance.PlaySoundWhoosh();
                     savedVelocity = _rigidbody2D.velocity;
                     float dashForce = facingRight ? 50f : -50f;
-                    _rigidbody2D.velocity = new Vector2(dashForce, _rigidbody2D.velocity.y);
+                    _rigidbody2D.velocity = new Vector2(dashForce*dashMultiplier, _rigidbody2D.velocity.y);
                     canDash = false;
                     isDashing = true;
                     dashTimer = 1.5f;
@@ -144,7 +151,7 @@ namespace Punk
                 {
                     jumpsLeft--;
                     SoundManager.instance.PlaySoundJump();
-                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0);
+                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x*jumpMultiplier, 0);
                     _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
             }
@@ -273,7 +280,13 @@ namespace Punk
         public void saveData()
         {
             PlayerPrefs.SetInt("health", health);
-
+            PlayerPrefs.SetFloat("dmgMult", damageMultiplier);
+            PlayerPrefs.SetFloat("dashMult", dashMultiplier);
+            PlayerPrefs.SetFloat("spMult", speedMultiplier);
+            PlayerPrefs.SetFloat("jMult", jumpMultiplier);
+            PlayerPrefs.SetInt("mosh", moshScore);
+            PlayerPrefs.SetInt("theory", theoryScore);
+            PlayerPrefs.SetInt("presence",  presenceScore);
         }
 
         public void getAmmo(int ammoAmt)
@@ -285,7 +298,24 @@ namespace Punk
         //Load all fields from
         public void loadData()
         {
-            health = PlayerPrefs.GetInt("health");
+            if (PlayerPrefs.HasKey("health")) health = PlayerPrefs.GetInt("health");
+            else health = 3;
+            if (PlayerPrefs.HasKey("dmgMult")) damageMultiplier = PlayerPrefs.GetFloat("dmgMult");
+            else damageMultiplier = 1;
+            if (PlayerPrefs.HasKey("dashMult")) dashMultiplier = PlayerPrefs.GetFloat("dmgMult");
+            else dashMultiplier = 1;
+            if (PlayerPrefs.HasKey("spMult")) speedMultiplier = PlayerPrefs.GetFloat("dmgMult");
+            else speedMultiplier = 1;
+            if (PlayerPrefs.HasKey("jMult")) jumpMultiplier = PlayerPrefs.GetFloat("dmgMult");
+            else jumpMultiplier = 1;
+            if (PlayerPrefs.HasKey("critOn")) critOn = PlayerPrefs.GetInt("critOn");
+            else critOn = 20;
+            if (PlayerPrefs.HasKey("mosh")) moshScore = PlayerPrefs.GetInt("mosh");
+            else moshScore = 0;
+            if (PlayerPrefs.HasKey("theory")) theoryScore = PlayerPrefs.GetInt("theory");
+            else theoryScore = 0;
+            if (PlayerPrefs.HasKey("presence")) presenceScore = PlayerPrefs.GetInt("presence");
+            else presenceScore = 0;
         }
 
         void updateDisplay()
