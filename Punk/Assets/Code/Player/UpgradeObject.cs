@@ -14,7 +14,7 @@ namespace Punk
 
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             int mosh = PlayerPrefs.GetInt("mosh");
             int theory = PlayerPrefs.GetInt("theory");
@@ -38,22 +38,22 @@ namespace Punk
 
         public void upDash()
         {
-            PlayerPrefs.SetFloat("dashMult", PlayerPrefs.GetFloat("dashMult") + .25f);
-            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetFloat("dashMult", PlayerPrefs.GetFloat("dashMult") + .1f);
+            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 
         public void upSpeed()
         {
-            PlayerPrefs.SetFloat("spMult", PlayerPrefs.GetFloat("spMult") + .25f);
-            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetFloat("spMult", PlayerPrefs.GetFloat("spMult") + .1f);
+            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 
         public void upJump()
         {
-            PlayerPrefs.SetFloat("jMult", PlayerPrefs.GetFloat("jMult") + .25f);
-            PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
+            PlayerPrefs.SetFloat("jMult", PlayerPrefs.GetFloat("jMult") + .1f);
+            //PlayerPrefs.SetInt("presence", PlayerPrefs.GetInt("presence") + 1);
             nextScene();
         }
 

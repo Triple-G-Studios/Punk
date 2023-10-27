@@ -999,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 188903257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 118.02, y: 0.3, z: 0}
+  m_LocalPosition: {x: 117.95, y: -0.35, z: 0}
   m_LocalScale: {x: 50.366, y: 50.366, z: 50.366}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2869,6 +2869,7 @@ MonoBehaviour:
   moshScore: 0
   theoryScore: 0
   presenceScore: 0
+  ammoPer: 0
 --- !u!50 &1094201968
 Rigidbody2D:
   serializedVersion: 4

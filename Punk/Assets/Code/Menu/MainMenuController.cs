@@ -21,6 +21,7 @@ namespace Punk
 
         public void playGame()
         {
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Tutorial");
         }
     }

@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0d3c9fb2bb3b045ae422b9aedd4eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toLevel: Level1
+  toLevel: Boss
 --- !u!61 &585979059
 BoxCollider2D:
   m_ObjectHideFlags: 0

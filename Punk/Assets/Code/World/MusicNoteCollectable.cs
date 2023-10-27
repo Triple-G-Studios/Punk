@@ -23,7 +23,7 @@ namespace Punk
 
         void OnTriggerEnter2D()
         {
-            PlayerController.instance.getAmmo(1);
+            PlayerController.instance.getAmmo(PlayerPrefs.GetInt("ammoPer"));
             Destroy(gameObject);
         }
     }

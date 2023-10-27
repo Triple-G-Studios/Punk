@@ -288,7 +288,7 @@ namespace Punk
             PlayerPrefs.SetInt("critOn", critOn);
             PlayerPrefs.SetInt("mosh", moshScore);
             PlayerPrefs.SetInt("theory", theoryScore);
-            PlayerPrefs.SetInt("presence",  presenceScore);
+            PlayerPrefs.SetInt("presence", presenceScore);
             PlayerPrefs.SetInt("ammoPer", ammoPer);
         }
 
@@ -320,7 +320,7 @@ namespace Punk
             if (PlayerPrefs.HasKey("presence")) presenceScore = PlayerPrefs.GetInt("presence");
             else presenceScore = 0;
             if (PlayerPrefs.HasKey("ammoPer")) ammoPer = PlayerPrefs.GetInt("ammoPer");
-            else presenceScore = 1;
+            else ammoPer = 1;
         }
 
         void updateDisplay()
