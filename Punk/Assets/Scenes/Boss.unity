@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7836237
+      value: 3.7916498
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2566016
+      value: 2.2566178
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -169,6 +169,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439461083665973524, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7741387653708394363, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
@@ -1780,6 +1784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Victory
+  boss: {fileID: 739167233}
 --- !u!61 &1051184420
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2685,6 +2690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Boss
+  boss: {fileID: 0}
 --- !u!61 &1384649318
 BoxCollider2D:
   m_ObjectHideFlags: 0

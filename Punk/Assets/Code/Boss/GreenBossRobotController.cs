@@ -160,6 +160,7 @@ namespace Punk
         {
             GameObject projectile = Instantiate(projectilePrefab, spawnPoint.position + offset, spawnPoint.rotation);
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            var projectileSprite = projectile.GetComponent<SpriteRenderer>();
 
             if (directionLeft)
             {
@@ -167,6 +168,7 @@ namespace Punk
             }
             else
             {
+                projectileSprite.flipX = !projectileSprite.flipX;
                 rb.velocity = new Vector2(speed, 0);
             }
         }
