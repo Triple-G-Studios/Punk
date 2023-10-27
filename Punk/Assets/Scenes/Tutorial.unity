@@ -2862,6 +2862,13 @@ MonoBehaviour:
   sfxPlaying: 0
   projectileDistanceTimer: 1
   damageMultiplier: 1
+  speedMultiplier: 0
+  dashMultiplier: 0
+  jumpMultiplier: 0
+  critOn: 0
+  moshScore: 0
+  theoryScore: 0
+  presenceScore: 0
 --- !u!50 &1094201968
 Rigidbody2D:
   serializedVersion: 4
@@ -3923,7 +3930,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.044174194, y: -7.277031}
+  m_Offset: {x: 2.950798, y: -7.277031}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3934,7 +3941,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 200.12268, y: 1.3384647}
+  m_Size: {x: 205.93593, y: 1.3384647}
   m_EdgeRadius: 0
 --- !u!4 &1599147529
 Transform:
@@ -3964,6 +3971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Tutorial
+  boss: {fileID: 0}
 --- !u!1 &1681075107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,8 +4417,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6977644e6d2a94782af067059e58e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: distance
-  upgradeAmount: 0.1
+  moshButtons: []
+  theoryButtons: []
+  presenceButtons: []
 --- !u!212 &1863094678
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8753,11 +8762,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7856941
+      value: 3.7858162
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2740195
+      value: 2.27402
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.z

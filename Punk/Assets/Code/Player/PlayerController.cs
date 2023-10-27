@@ -44,6 +44,7 @@ namespace Punk
         public int moshScore;
         public int theoryScore;
         public int presenceScore;
+        public int ammoPer;
 
         // Methods (Start is called before the first frame update)
         void Start()
@@ -284,9 +285,11 @@ namespace Punk
             PlayerPrefs.SetFloat("dashMult", dashMultiplier);
             PlayerPrefs.SetFloat("spMult", speedMultiplier);
             PlayerPrefs.SetFloat("jMult", jumpMultiplier);
+            PlayerPrefs.SetInt("critOn", critOn);
             PlayerPrefs.SetInt("mosh", moshScore);
             PlayerPrefs.SetInt("theory", theoryScore);
             PlayerPrefs.SetInt("presence",  presenceScore);
+            PlayerPrefs.SetInt("ammoPer", ammoPer);
         }
 
         public void getAmmo(int ammoAmt)
@@ -301,13 +304,13 @@ namespace Punk
             if (PlayerPrefs.HasKey("health")) health = PlayerPrefs.GetInt("health");
             else health = 3;
             if (PlayerPrefs.HasKey("dmgMult")) damageMultiplier = PlayerPrefs.GetFloat("dmgMult");
-            else damageMultiplier = 1;
-            if (PlayerPrefs.HasKey("dashMult")) dashMultiplier = PlayerPrefs.GetFloat("dmgMult");
-            else dashMultiplier = 1;
-            if (PlayerPrefs.HasKey("spMult")) speedMultiplier = PlayerPrefs.GetFloat("dmgMult");
-            else speedMultiplier = 1;
-            if (PlayerPrefs.HasKey("jMult")) jumpMultiplier = PlayerPrefs.GetFloat("dmgMult");
-            else jumpMultiplier = 1;
+            else damageMultiplier = 1f;
+            if (PlayerPrefs.HasKey("dashMult")) dashMultiplier = PlayerPrefs.GetFloat("dashMult");
+            else dashMultiplier = 1f;
+            if (PlayerPrefs.HasKey("spMult")) speedMultiplier = PlayerPrefs.GetFloat("spMult");
+            else speedMultiplier = 1f;
+            if (PlayerPrefs.HasKey("jMult")) jumpMultiplier = PlayerPrefs.GetFloat("jMult");
+            else jumpMultiplier = 1f;
             if (PlayerPrefs.HasKey("critOn")) critOn = PlayerPrefs.GetInt("critOn");
             else critOn = 20;
             if (PlayerPrefs.HasKey("mosh")) moshScore = PlayerPrefs.GetInt("mosh");
@@ -316,6 +319,8 @@ namespace Punk
             else theoryScore = 0;
             if (PlayerPrefs.HasKey("presence")) presenceScore = PlayerPrefs.GetInt("presence");
             else presenceScore = 0;
+            if (PlayerPrefs.HasKey("ammoPer")) ammoPer = PlayerPrefs.GetInt("ammoPer");
+            else presenceScore = 1;
         }
 
         void updateDisplay()

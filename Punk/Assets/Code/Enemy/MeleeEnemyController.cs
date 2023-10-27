@@ -111,6 +111,9 @@ namespace Punk
         {
             _rb.velocity = Vector2.zero;
             animator.SetTrigger("Hurt");
+            //add these 2 lines for crit
+            int critRoll = (int)(Random.value * 20 + 1);
+            if (critRoll >= PlayerPrefs.GetInt("critOn")) curHealth -= damage;
             curHealth -= damage;
             if (curHealth <= 0)
             {

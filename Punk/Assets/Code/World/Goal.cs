@@ -29,7 +29,8 @@ namespace Punk
         void NextLevel()
         {
             PlayerController.instance.sfxPlaying = false;
-            SceneManager.LoadScene(toLevel);
+            PlayerPrefs.SetString("toLevel", toLevel);
+            SceneManager.LoadScene("SkillTree");
         }
     }
 }
