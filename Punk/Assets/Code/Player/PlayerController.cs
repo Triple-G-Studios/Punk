@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
@@ -10,6 +11,7 @@ namespace Punk
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController instance;
+        private PlayerActionControls playerActionControls;
 
         // Outlets
         Rigidbody2D _rigidbody2D;
@@ -55,11 +57,23 @@ namespace Punk
             health = 3;
             canDash = true;
             facingRight = true;
+            playerActionControls.Game.Jump.performed += _ => Jump();
         }
         void Awake()
         {
             instance = this;
+            playerActionControls = new PlayerActionControls();
             loadData();
+        }
+
+        private void OnEnable()
+        {
+            playerActionControls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            playerActionControls.Disable();
         }
 
         void FixedUpdate()
@@ -80,6 +94,9 @@ namespace Punk
         void Update()
         {
             if (MenuController.instance.isPaused) return;
+
+            // TESTING PURPOSES
+            float movementInput = playerActionControls.Game.Move.ReadValue<float>();
 
             float defaultSpeed = 18f;
             //Only lessen timers if they are positive to avoid underflow
@@ -146,7 +163,7 @@ namespace Punk
             }
 
             // Jump
-            if (Input.GetKeyDown(KeyCode.Space))
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (jumpsLeft > 0)
                 {
@@ -155,7 +172,7 @@ namespace Punk
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x*jumpMultiplier, 0);
                     _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
-            }
+            }*/
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
             // Attack
@@ -185,6 +202,19 @@ namespace Punk
                     animator.SetTrigger("Shoot");
                     ammoLeft -= 1;
                     updateDisplay();
+                }
+            }
+        }
+        private void Jump()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (jumpsLeft > 0)
+                {
+                    jumpsLeft--;
+                    SoundManager.instance.PlaySoundJump();
+                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x * jumpMultiplier, 0);
+                    _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
             }
         }

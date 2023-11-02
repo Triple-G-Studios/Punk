@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 1094201971}
   - component: {fileID: 1094201972}
   - component: {fileID: 1094201973}
+  - component: {fileID: 1094201974}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1577,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3188f7c25741c0a330d49a4e46b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1764574049}
+  healthBar: {fileID: 0}
   healthStates:
   - {fileID: 21300000, guid: 13b33b584b3674d499838f5374ec7bd2, type: 3}
   - {fileID: 21300000, guid: 131833653e65d1c4fb18cec21f41a82a, type: 3}
@@ -1593,8 +1594,17 @@ MonoBehaviour:
   isDashing: 0
   isInvincible: 0
   health: 0
+  sfxPlaying: 0
   projectileDistanceTimer: 1
   damageMultiplier: 1
+  speedMultiplier: 0
+  dashMultiplier: 0
+  jumpMultiplier: 0
+  critOn: 0
+  moshScore: 0
+  theoryScore: 0
+  presenceScore: 0
+  ammoPer: 0
 --- !u!50 &1094201968
 Rigidbody2D:
   serializedVersion: 4
@@ -1792,6 +1802,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 1.2}
   m_EdgeRadius: 0.2
+--- !u!114 &1094201974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094201965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c2022df44b78ed24fa148688517729d8, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1106444094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2181,6 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Victory
+  boss: {fileID: 0}
 --- !u!61 &1431903694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2560,6 +2601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Scene1
+  boss: {fileID: 0}
 --- !u!1001 &1702838549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2701,17 +2743,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1764574049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6679383312220183235, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
-  m_PrefabInstance: {fileID: 3188651335883050349}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1833869104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,7 +2831,7 @@ Transform:
   m_GameObject: {fileID: 1833869104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7881393, y: 2.2566106, z: -10}
+  m_LocalPosition: {x: 3.78574, y: 2.2566059, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5037,11 +5068,19 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91615399138779631, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3696748045753730798, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4192072196909628824, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969367841805638372, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

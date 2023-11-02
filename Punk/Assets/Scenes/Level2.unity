@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 53587202}
   - component: {fileID: 53587201}
   - component: {fileID: 53587200}
+  - component: {fileID: 53587206}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -231,6 +232,14 @@ MonoBehaviour:
   sfxPlaying: 0
   projectileDistanceTimer: 0
   damageMultiplier: 0
+  speedMultiplier: 0
+  dashMultiplier: 0
+  jumpMultiplier: 0
+  critOn: 0
+  moshScore: 0
+  theoryScore: 0
+  presenceScore: 0
+  ammoPer: 0
 --- !u!50 &53587203
 Rigidbody2D:
   serializedVersion: 4
@@ -327,6 +336,36 @@ Transform:
   - {fileID: 1292325176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53587206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53587199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c2022df44b78ed24fa148688517729d8, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &163807064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toLevel: Scene1
+  boss: {fileID: 0}
 --- !u!1 &1631563454
 GameObject:
   m_ObjectHideFlags: 0
