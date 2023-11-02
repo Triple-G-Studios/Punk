@@ -12,7 +12,7 @@ namespace Punk
         public GameObject optionsmenu;
         public GameObject keybindsmenu;
 
-       public  void Show(GameObject menu)
+       public void Show(GameObject menu)
         {
             mainmenu.SetActive(false);
             optionsmenu.SetActive(false);

@@ -273,7 +273,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 .WithControlsExcluding("<Keyboard>/space")
                 .WithControlsExcluding("<Keyboard>/a")
                 .WithControlsExcluding("<Keyboard>/d")
-                .WithControlsExcluding("<Keyboard>/shift")
+                .WithControlsExcluding("<Keyboard>/leftShift")
                 .WithCancelingThrough("<Keyboard>/escape")
                 .OnCancel(
                     operation =>
