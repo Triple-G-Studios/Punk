@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Projectiles last twice as long
+  m_text: Projectiles last 1.5x as long
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -9.787651, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.0000076253755, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

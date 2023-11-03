@@ -80,7 +80,7 @@ namespace Punk
 
         public void upProjectileDist()
         {
-            PlayerPrefs.SetFloat("projTime", PlayerPrefs.GetFloat("projTime") + 1f);
+            PlayerPrefs.SetFloat("projTime", PlayerPrefs.GetFloat("projTime") + 0.5f);
             PlayerPrefs.SetInt("theory", PlayerPrefs.GetInt("theory") + 1);
             nextScene();
         }
