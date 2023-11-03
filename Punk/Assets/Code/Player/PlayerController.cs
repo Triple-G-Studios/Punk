@@ -30,6 +30,9 @@ namespace Punk
         public float dashTimer;
         public bool isDashing;
         public bool isInvincible;
+        public bool isAttacking;
+        private float attackCooldown = 0.3f;
+        private float attackCooldownTimer = 0f;
         private float invincibleTimer;
         public int health;
         private Vector2 savedVelocity; //for dashing
@@ -175,10 +178,21 @@ namespace Punk
             }*/
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
+            if (isAttacking)
+            {
+                attackCooldownTimer -= Time.deltaTime;
+                if (attackCooldownTimer <= 0f)
+                {
+                    isAttacking = false;
+                }
+            }
+
             // Attack
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
             {
                 animator.SetTrigger("Attack");
+                isAttacking = true;
+                attackCooldownTimer = attackCooldown;
             }
 
             // Aim Toward Mouse
