@@ -67,6 +67,7 @@ namespace Punk
             instance = this;
             playerActionControls = new PlayerActionControls();
             loadData();
+            updateDisplay();
         }
 
         private void OnEnable()
@@ -334,6 +335,7 @@ namespace Punk
             PlayerPrefs.SetInt("theory", theoryScore);
             PlayerPrefs.SetInt("presence", presenceScore);
             PlayerPrefs.SetInt("ammoPer", ammoPer);
+            PlayerPrefs.SetInt("ammoLeft", ammoLeft);
             PlayerPrefs.SetFloat("projTime", projectileDistanceTimer);
         }
 
@@ -364,6 +366,8 @@ namespace Punk
             else theoryScore = 0;
             if (PlayerPrefs.HasKey("presence")) presenceScore = PlayerPrefs.GetInt("presence");
             else presenceScore = 0;
+            if (PlayerPrefs.HasKey("ammoLeft")) ammoLeft = PlayerPrefs.GetInt("ammoLeft");
+            else ammoLeft = 0;
             if (PlayerPrefs.HasKey("ammoPer")) ammoPer = PlayerPrefs.GetInt("ammoPer");
             else ammoPer = 1;
             if (PlayerPrefs.HasKey("projTime")) projectileDistanceTimer = PlayerPrefs.GetFloat("projTime");
