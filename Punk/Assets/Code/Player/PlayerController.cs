@@ -334,6 +334,7 @@ namespace Punk
             PlayerPrefs.SetInt("theory", theoryScore);
             PlayerPrefs.SetInt("presence", presenceScore);
             PlayerPrefs.SetInt("ammoPer", ammoPer);
+            PlayerPrefs.SetFloat("projTime", projectileDistanceTimer);
         }
 
         public void getAmmo(int ammoAmt)
@@ -365,6 +366,8 @@ namespace Punk
             else presenceScore = 0;
             if (PlayerPrefs.HasKey("ammoPer")) ammoPer = PlayerPrefs.GetInt("ammoPer");
             else ammoPer = 1;
+            if (PlayerPrefs.HasKey("projTime")) projectileDistanceTimer = PlayerPrefs.GetFloat("projTime");
+            else projectileDistanceTimer = 1;
         }
 
         void updateDisplay()

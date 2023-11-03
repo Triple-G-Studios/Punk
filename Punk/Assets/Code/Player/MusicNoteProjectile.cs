@@ -10,7 +10,7 @@ namespace Punk
         Rigidbody2D _rigidbody2D;
 
         //State tracking
-        public float existFor = 1;
+        public float existFor;
 
         void Start()
         {
@@ -33,15 +33,16 @@ namespace Punk
             var enemy = collision.collider.GetComponent<EnemyController>();
             var idleEnemy = collision.collider.GetComponent<IdleEnemyController>();
             var meleeEnemy = collision.collider.GetComponent<MeleeEnemyController>();
+            var damage = (PlayerPrefs.HasKey("projDam")) ? PlayerPrefs.GetFloat("projDam") : 1f;
             if (enemy)
             {
-                enemy.TakeHit(1);
+                enemy.TakeHit(damage);
             } else if (idleEnemy)
             {
-                idleEnemy.TakeHit(1);
+                idleEnemy.TakeHit(damage);
             } else if (meleeEnemy)
             {
-                meleeEnemy.TakeHit(1);
+                meleeEnemy.TakeHit(damage);
             }
 
             Destroy(gameObject);
