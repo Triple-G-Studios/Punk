@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
@@ -10,6 +11,7 @@ namespace Punk
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController instance;
+        private PlayerActionControls playerActionControls;
 
         // Outlets
         Rigidbody2D _rigidbody2D;
@@ -28,6 +30,9 @@ namespace Punk
         public float dashTimer;
         public bool isDashing;
         public bool isInvincible;
+        public bool isAttacking;
+        private float attackCooldown = 0.3f;
+        private float attackCooldownTimer = 0f;
         private float invincibleTimer;
         public int health;
         private Vector2 savedVelocity; //for dashing
@@ -55,11 +60,24 @@ namespace Punk
             health = 3;
             canDash = true;
             facingRight = true;
+            playerActionControls.Game.Jump.performed += _ => Jump();
         }
         void Awake()
         {
             instance = this;
+            playerActionControls = new PlayerActionControls();
             loadData();
+            updateDisplay();
+        }
+
+        private void OnEnable()
+        {
+            playerActionControls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            playerActionControls.Disable();
         }
 
         void FixedUpdate()
@@ -80,6 +98,9 @@ namespace Punk
         void Update()
         {
             if (MenuController.instance.isPaused) return;
+
+            // TESTING PURPOSES
+            float movementInput = playerActionControls.Game.Move.ReadValue<float>();
 
             float defaultSpeed = 18f;
             //Only lessen timers if they are positive to avoid underflow
@@ -146,7 +167,7 @@ namespace Punk
             }
 
             // Jump
-            if (Input.GetKeyDown(KeyCode.Space))
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (jumpsLeft > 0)
                 {
@@ -155,13 +176,24 @@ namespace Punk
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x*jumpMultiplier, 0);
                     _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
-            }
+            }*/
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
+            if (isAttacking)
+            {
+                attackCooldownTimer -= Time.deltaTime;
+                if (attackCooldownTimer <= 0f)
+                {
+                    isAttacking = false;
+                }
+            }
+
             // Attack
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
             {
                 animator.SetTrigger("Attack");
+                isAttacking = true;
+                attackCooldownTimer = attackCooldown;
             }
 
             // Aim Toward Mouse
@@ -185,6 +217,19 @@ namespace Punk
                     animator.SetTrigger("Shoot");
                     ammoLeft -= 1;
                     updateDisplay();
+                }
+            }
+        }
+        private void Jump()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (jumpsLeft > 0)
+                {
+                    jumpsLeft--;
+                    SoundManager.instance.PlaySoundJump();
+                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x * jumpMultiplier, 0);
+                    _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
                 }
             }
         }
@@ -290,6 +335,8 @@ namespace Punk
             PlayerPrefs.SetInt("theory", theoryScore);
             PlayerPrefs.SetInt("presence", presenceScore);
             PlayerPrefs.SetInt("ammoPer", ammoPer);
+            PlayerPrefs.SetInt("ammoLeft", ammoLeft);
+            PlayerPrefs.SetFloat("projTime", projectileDistanceTimer);
         }
 
         public void getAmmo(int ammoAmt)
@@ -319,8 +366,12 @@ namespace Punk
             else theoryScore = 0;
             if (PlayerPrefs.HasKey("presence")) presenceScore = PlayerPrefs.GetInt("presence");
             else presenceScore = 0;
+            if (PlayerPrefs.HasKey("ammoLeft")) ammoLeft = PlayerPrefs.GetInt("ammoLeft");
+            else ammoLeft = 0;
             if (PlayerPrefs.HasKey("ammoPer")) ammoPer = PlayerPrefs.GetInt("ammoPer");
             else ammoPer = 1;
+            if (PlayerPrefs.HasKey("projTime")) projectileDistanceTimer = PlayerPrefs.GetFloat("projTime");
+            else projectileDistanceTimer = 1;
         }
 
         void updateDisplay()

@@ -10,6 +10,7 @@ namespace Punk
 
         //Outlets
         public GameObject pauseMenu;
+        public GameObject keybindsMenu;
         public bool isPaused;
 
         void Awake()
@@ -21,7 +22,8 @@ namespace Punk
         //Make them invisible
         public void Hide()
         {
-            gameObject.SetActive(false);
+            pauseMenu.SetActive(false);
+            keybindsMenu.SetActive(false);
             isPaused = false;
             Time.timeScale = 1;
         }
@@ -29,9 +31,16 @@ namespace Punk
         //Make them visible
         public void Show()
         {
-            gameObject.SetActive(true);
+            pauseMenu.SetActive(true);
             isPaused = true;
             Time.timeScale = 0;
+        }
+        public void Switch(GameObject menu)
+        {
+            pauseMenu.SetActive(false);
+            keybindsMenu.SetActive(false);
+
+            menu.SetActive(true);
         }
     }
 }

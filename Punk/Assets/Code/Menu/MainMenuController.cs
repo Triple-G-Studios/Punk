@@ -10,11 +10,13 @@ namespace Punk
         // Outlets
         public GameObject mainmenu;
         public GameObject optionsmenu;
+        public GameObject keybindsmenu;
 
-       public  void Show(GameObject menu)
+       public void Show(GameObject menu)
         {
             mainmenu.SetActive(false);
             optionsmenu.SetActive(false);
+            keybindsmenu.SetActive(false);
 
             menu.SetActive(true);
         }

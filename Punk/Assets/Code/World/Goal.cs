@@ -9,6 +9,7 @@ namespace Punk
     {
         Rigidbody2D _rigidbody2D;
         public string toLevel;
+        private bool soundPlayed = false;
 
         void Start ()
         {
@@ -17,8 +18,9 @@ namespace Punk
 
         void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.GetComponent<PlayerController>())
+            if (other.gameObject.GetComponent<PlayerController>() && !soundPlayed)
             {
+                soundPlayed = true;
                 PlayerController.instance.sfxPlaying = true;
                 SoundManager.instance.PlaySoundVictory();
                 other.gameObject.GetComponent<PlayerController>().saveData();
@@ -28,6 +30,7 @@ namespace Punk
 
         void NextLevel()
         {
+            soundPlayed = false;
             PlayerController.instance.sfxPlaying = false;
             PlayerPrefs.SetString("toLevel", toLevel);
             SceneManager.LoadScene("SkillTree");

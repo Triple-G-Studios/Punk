@@ -78,6 +78,20 @@ namespace Punk
             nextScene();
         }
 
+        public void upProjectileDist()
+        {
+            PlayerPrefs.SetFloat("projTime", PlayerPrefs.GetFloat("projTime") + 0.5f);
+            PlayerPrefs.SetInt("theory", PlayerPrefs.GetInt("theory") + 1);
+            nextScene();
+        }
+
+        public void upProjectileDam()
+        {
+            PlayerPrefs.SetFloat("projDam", PlayerPrefs.GetFloat("projDam") + 1f);
+            PlayerPrefs.SetInt("theory", PlayerPrefs.GetInt("theory") + 1);
+            nextScene();
+        }
+
         private void nextScene()
         {
             SceneManager.LoadScene(PlayerPrefs.GetString("toLevel"));
