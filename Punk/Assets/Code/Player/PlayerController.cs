@@ -60,7 +60,7 @@ namespace Punk
             health = 3;
             canDash = true;
             facingRight = true;
-            playerActionControls.Game.Jump.performed += _ => Jump();
+            // playerActionControls.Game.Jump.performed += _ => Jump();
         }
         void Awake()
         {
@@ -220,9 +220,10 @@ namespace Punk
                 }
             }
         }
-        private void Jump()
+        public void Jump(InputAction.CallbackContext ctxt)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            print(playerActionControls.Game.Jump);
+            if (ctxt.performed)
             {
                 if (jumpsLeft > 0)
                 {
