@@ -147,24 +147,6 @@ namespace Punk
                 Flip(true);
             }
 
-            // Dash
-            /*if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                if (canDash)
-                {
-                    // SoundManager.instance.PlaySoundWhoosh();
-                    savedVelocity = _rigidbody2D.velocity;
-                    float dashForce = facingRight ? 50f : -50f;
-                    _rigidbody2D.velocity = new Vector2(dashForce*dashMultiplier, _rigidbody2D.velocity.y);
-                    canDash = false;
-                    isDashing = true;
-                    dashTimer = 1.5f;
-                    animator.SetBool("Is Dashing", true);
-                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
-                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), true);
-                }
-            }*/
-
             // Jump
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
@@ -196,7 +178,7 @@ namespace Punk
             aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
 
             // Shoot
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            /*if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (ammoLeft > 0)
                 {
@@ -207,7 +189,7 @@ namespace Punk
                     ammoLeft -= 1;
                     updateDisplay();
                 }
-            }
+            }*/
         }
         public void Jump(InputAction.CallbackContext ctxt)
         {
@@ -239,6 +221,22 @@ namespace Punk
                     animator.SetBool("Is Dashing", true);
                     Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
                     Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), true);
+                }
+            }
+        }
+
+        public void Shoot(InputAction.CallbackContext ctxt)
+        {
+            if (ctxt.performed)
+            {
+                if (ammoLeft > 0)
+                {
+                    GameObject newProjectile = Instantiate(musicNotePrefab);
+                    newProjectile.transform.position = transform.position;
+                    newProjectile.transform.rotation = aimPivot.rotation;
+                    animator.SetTrigger("Shoot");
+                    ammoLeft -= 1;
+                    updateDisplay();
                 }
             }
         }
