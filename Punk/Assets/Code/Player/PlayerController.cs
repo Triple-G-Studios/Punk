@@ -60,7 +60,6 @@ namespace Punk
             health = 3;
             canDash = true;
             facingRight = true;
-            // playerActionControls.Game.Jump.performed += _ => Jump();
         }
         void Awake()
         {
@@ -149,7 +148,7 @@ namespace Punk
             }
 
             // Dash
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            /*if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if (canDash)
                 {
@@ -164,19 +163,9 @@ namespace Punk
                     Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
                     Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), true);
                 }
-            }
+            }*/
 
             // Jump
-            /*if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (jumpsLeft > 0)
-                {
-                    jumpsLeft--;
-                    SoundManager.instance.PlaySoundJump();
-                    _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x*jumpMultiplier, 0);
-                    _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
-                }
-            }*/
             animator.SetInteger("JumpsLeft", jumpsLeft);
 
             if (isAttacking)
@@ -222,7 +211,6 @@ namespace Punk
         }
         public void Jump(InputAction.CallbackContext ctxt)
         {
-            print(playerActionControls.Game.Jump);
             if (ctxt.performed)
             {
                 if (jumpsLeft > 0)
@@ -231,6 +219,26 @@ namespace Punk
                     SoundManager.instance.PlaySoundJump();
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x * jumpMultiplier, 0);
                     _rigidbody2D.AddForce(Vector2.up * 16f, ForceMode2D.Impulse);
+                }
+            }
+        }
+
+        public void Dash(InputAction.CallbackContext ctxt)
+        {
+            if (ctxt.performed)
+            {
+                if (canDash)
+                {
+                    // SoundManager.instance.PlaySoundWhoosh();
+                    savedVelocity = _rigidbody2D.velocity;
+                    float dashForce = facingRight ? 50f : -50f;
+                    _rigidbody2D.velocity = new Vector2(dashForce * dashMultiplier, _rigidbody2D.velocity.y);
+                    canDash = false;
+                    isDashing = true;
+                    dashTimer = 1.5f;
+                    animator.SetBool("Is Dashing", true);
+                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Projectile"), true);
                 }
             }
         }

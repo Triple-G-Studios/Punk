@@ -46,6 +46,15 @@ namespace Punk
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""ec66b9b5-932c-45b5-b4fa-4403441db9e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ namespace Punk
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f0fa883a-4ec5-4190-9890-a4eb7fdbc7dd"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -102,6 +122,7 @@ namespace Punk
             m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
             m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
             m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
+            m_Game_Dash = m_Game.FindAction("Dash", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -165,12 +186,14 @@ namespace Punk
         private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
         private readonly InputAction m_Game_Move;
         private readonly InputAction m_Game_Jump;
+        private readonly InputAction m_Game_Dash;
         public struct GameActions
         {
             private @PlayerActionControls m_Wrapper;
             public GameActions(@PlayerActionControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Game_Move;
             public InputAction @Jump => m_Wrapper.m_Game_Jump;
+            public InputAction @Dash => m_Wrapper.m_Game_Dash;
             public InputActionMap Get() { return m_Wrapper.m_Game; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -186,6 +209,9 @@ namespace Punk
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
 
             private void UnregisterCallbacks(IGameActions instance)
@@ -196,6 +222,9 @@ namespace Punk
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
+                @Dash.started -= instance.OnDash;
+                @Dash.performed -= instance.OnDash;
+                @Dash.canceled -= instance.OnDash;
             }
 
             public void RemoveCallbacks(IGameActions instance)
@@ -217,6 +246,7 @@ namespace Punk
         {
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+            void OnDash(InputAction.CallbackContext context);
         }
     }
 }
