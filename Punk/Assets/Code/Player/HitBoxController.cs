@@ -40,7 +40,7 @@ namespace Punk
                 {
                     SoundManager.instance.PlaySoundSlash();
                     GreenBossRobotController boss = other.GetComponentInParent<GreenBossRobotController>();
-                    if (boss != null)
+                    if (boss != null && !boss.isInvincible)
                     {
                         boss.TakeHit(1);
                     }

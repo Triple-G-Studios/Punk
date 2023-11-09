@@ -1,0 +1,1350 @@
+fileFormatVersion: 2
+guid: af2f0c8da265249d8bc6875e8307475a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 672
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9cc68ab7a5b45fc9e24717b095ac47
+      internalID: 237357180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 672
+        width: 71
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf5a5675d9ea466a8396bf7b2838e3f
+      internalID: -500773330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 576
+        width: 71
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ef3ad1cc63547ecad01b2a2e637fcb
+      internalID: 676317117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 576
+        width: 71
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ab19b48c56649dab71934225e45fd7
+      internalID: -725607379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 576
+        width: 71
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0610d4b1d8dc746299b55915104a34bc
+      internalID: 2088657233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 576
+        width: 71
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7749101c063436fb4ab9cc684130d1
+      internalID: -1941398147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 480
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ff09d3b24a54e63b35d24e897bf57e
+      internalID: -1522308239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 480
+        width: 69
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ac20751c4c94928a6d59f6167c7719
+      internalID: 721427048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 480
+        width: 69
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd0a3c102d394b6294795f7e92b24e2
+      internalID: 1713674987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 480
+        width: 75
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5400fbdb15bba47e1b454701f80ac826
+      internalID: -2030448350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 480
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ad10db69aa02417e898fda0df07c846
+      internalID: 812234554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 480
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b26133086a7a4905815a119202a5271
+      internalID: -607781288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 480
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b885f1aeda50e43a691e0af8672516d3
+      internalID: -1026638518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 480
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c20f77d250c849e98a3afabdf208a78
+      internalID: -1413715312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 384
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb6a90d62522464791e198698616f1e
+      internalID: 459702692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 384
+        width: 66
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d1c8582e7bb40c68180ce4d99e5efb
+      internalID: -589480367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 384
+        width: 65
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b464c78a28bb2460c87bab0a16c1828d
+      internalID: 1210102208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 384
+        width: 64
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b80bc1f8d94b4974b0fd23ca54ac978
+      internalID: -1812170174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 384
+        width: 80
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e91672770ae4b4a830ab0e6a43e98d
+      internalID: 344838176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 384
+        width: 80
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155653ece8bb74e5d94174ad96b00d07
+      internalID: 357779339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 384
+        width: 64
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c13e8251712147f3880cee10d5c6e29
+      internalID: -1570708035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 384
+        width: 79
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9854247510874077a3b8a577060a712
+      internalID: -504693749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 384
+        width: 80
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02c8783b2d684c32b428fb85a3ce2d2
+      internalID: 402508638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 384
+        width: 80
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7f190f5d07d44d39c18ea8bf7b25d3
+      internalID: 573207397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 288
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535c4a86c433845c19e268c850acb3c6
+      internalID: -1824163667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 288
+        width: 65
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43711a350c62477e8312481bf41b164
+      internalID: 235567722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 288
+        width: 68
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d7d035555ed45c5a4db941f000de1c
+      internalID: -2088942942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 288
+        width: 67
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135610315e3a243e79ce1453ad618981
+      internalID: -1075145287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 288
+        width: 69
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29494ea54ccc4920985eb4f28919db5
+      internalID: -128750035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 288
+        width: 67
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7545203abc01b4cd08a44a66f038298b
+      internalID: 272737711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 288
+        width: 69
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e3fd041aeda41fca9c40e05e2bbf59
+      internalID: 1163519133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 192
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039bd3f1576d649f7a8c6c42de57bf0e
+      internalID: -708622397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 192
+        width: 78
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a484e1b66065c44aa955318e4d441eee
+      internalID: -475712446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 192
+        width: 78
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07777866bac540dba603ab1b6758e08
+      internalID: -1747891644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 192
+        width: 78
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94971a7799c32449484bddae136bddc2
+      internalID: -1695172375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 192
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec647c9df14645ffb2030d264a43528
+      internalID: -1158831662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 96
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3b8379b6952474dbe91e96e773655a
+      internalID: 921069866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 96
+        width: 77
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58f562cddbd24294b7cc66a773aff06
+      internalID: 805139458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 96
+        width: 78
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536761cf3047b4d2096c8edab49c07a9
+      internalID: -1875596775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 96
+        width: 82
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6129b45c4976d470394bf655a876ebe9
+      internalID: 1659566679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 96
+        width: 89
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1112b0629bb4e4c27854fdf91d6e1c10
+      internalID: -1928555610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 96
+        width: 94
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d054252ee9a14ae9acd1a994ba176f2
+      internalID: 456353660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 96
+        width: 29
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fba8f728117242d08ac067f60646027
+      internalID: 523021507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 96
+        width: 77
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e941b8d21a743e994d799b73a789f7
+      internalID: 1985639370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 96
+        width: 26
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881adf311882d42189c42f3bd7bc9da5
+      internalID: 1950813972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 96
+        width: 77
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177a5fcf2c4924d74a69ae4daea347aa
+      internalID: -488967551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 96
+        width: 29
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf245cb35f4424b59bd25a4d55859b51
+      internalID: 241266282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 96
+        width: 77
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207ea80de4ba7457badbd80b76ffa88e
+      internalID: 2112436164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 96
+        width: 26
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61dbc83eaa1034ae6a38dfe4a24d7193
+      internalID: 1185488816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 96
+        width: 77
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d1dcc7b738046bda211186acd22be2
+      internalID: -297084117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 71
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89eb416ba696d4619997238a1f880663
+      internalID: -1592316954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 65
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da7b93531a1d43b48ed375c5055039a
+      internalID: -1651326452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 68
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d26cd2eff9b349d4865c6d588fb6362
+      internalID: 1810516918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 67
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981570720b6fc4066ab74813f5dd9c14
+      internalID: 208902692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Completely_Red_Robot_Sprite_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 0
+        width: 67
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc589a6ea7a0451e833db6f2a4b2a62
+      internalID: -1511800880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Completely_Red_Robot_Sprite_Sheet_0: 237357180
+      Completely_Red_Robot_Sprite_Sheet_1: -500773330
+      Completely_Red_Robot_Sprite_Sheet_10: 812234554
+      Completely_Red_Robot_Sprite_Sheet_11: -607781288
+      Completely_Red_Robot_Sprite_Sheet_12: -1026638518
+      Completely_Red_Robot_Sprite_Sheet_13: -1413715312
+      Completely_Red_Robot_Sprite_Sheet_14: 459702692
+      Completely_Red_Robot_Sprite_Sheet_15: -589480367
+      Completely_Red_Robot_Sprite_Sheet_16: 1210102208
+      Completely_Red_Robot_Sprite_Sheet_17: -1812170174
+      Completely_Red_Robot_Sprite_Sheet_18: 344838176
+      Completely_Red_Robot_Sprite_Sheet_19: 357779339
+      Completely_Red_Robot_Sprite_Sheet_2: 676317117
+      Completely_Red_Robot_Sprite_Sheet_20: -1570708035
+      Completely_Red_Robot_Sprite_Sheet_21: -504693749
+      Completely_Red_Robot_Sprite_Sheet_22: 402508638
+      Completely_Red_Robot_Sprite_Sheet_23: 573207397
+      Completely_Red_Robot_Sprite_Sheet_24: -1824163667
+      Completely_Red_Robot_Sprite_Sheet_25: 235567722
+      Completely_Red_Robot_Sprite_Sheet_26: -2088942942
+      Completely_Red_Robot_Sprite_Sheet_27: -1075145287
+      Completely_Red_Robot_Sprite_Sheet_28: -128750035
+      Completely_Red_Robot_Sprite_Sheet_29: 272737711
+      Completely_Red_Robot_Sprite_Sheet_3: -725607379
+      Completely_Red_Robot_Sprite_Sheet_30: 1163519133
+      Completely_Red_Robot_Sprite_Sheet_31: -708622397
+      Completely_Red_Robot_Sprite_Sheet_32: -475712446
+      Completely_Red_Robot_Sprite_Sheet_33: -1747891644
+      Completely_Red_Robot_Sprite_Sheet_34: -1695172375
+      Completely_Red_Robot_Sprite_Sheet_35: -1158831662
+      Completely_Red_Robot_Sprite_Sheet_36: 921069866
+      Completely_Red_Robot_Sprite_Sheet_37: 805139458
+      Completely_Red_Robot_Sprite_Sheet_38: -1875596775
+      Completely_Red_Robot_Sprite_Sheet_39: 1659566679
+      Completely_Red_Robot_Sprite_Sheet_4: 2088657233
+      Completely_Red_Robot_Sprite_Sheet_40: -1928555610
+      Completely_Red_Robot_Sprite_Sheet_41: 456353660
+      Completely_Red_Robot_Sprite_Sheet_42: 523021507
+      Completely_Red_Robot_Sprite_Sheet_43: 1985639370
+      Completely_Red_Robot_Sprite_Sheet_44: 1950813972
+      Completely_Red_Robot_Sprite_Sheet_45: -488967551
+      Completely_Red_Robot_Sprite_Sheet_46: 241266282
+      Completely_Red_Robot_Sprite_Sheet_47: 2112436164
+      Completely_Red_Robot_Sprite_Sheet_48: 1185488816
+      Completely_Red_Robot_Sprite_Sheet_49: -297084117
+      Completely_Red_Robot_Sprite_Sheet_5: -1941398147
+      Completely_Red_Robot_Sprite_Sheet_50: -1592316954
+      Completely_Red_Robot_Sprite_Sheet_51: -1651326452
+      Completely_Red_Robot_Sprite_Sheet_52: 1810516918
+      Completely_Red_Robot_Sprite_Sheet_53: 208902692
+      Completely_Red_Robot_Sprite_Sheet_54: -1511800880
+      Completely_Red_Robot_Sprite_Sheet_6: -1522308239
+      Completely_Red_Robot_Sprite_Sheet_7: 721427048
+      Completely_Red_Robot_Sprite_Sheet_8: 1713674987
+      Completely_Red_Robot_Sprite_Sheet_9: -2030448350
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

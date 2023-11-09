@@ -15,6 +15,8 @@ namespace Punk
         public AudioClip laserShootSound;
         public AudioClip movementSoundClip;
         public AudioClip deadSoundClip;
+        public AudioClip rageSoundClip;
+
 
         void Awake()
         {
@@ -64,6 +66,20 @@ namespace Punk
         {
             audioSource.PlayOneShot(deadSoundClip);
         }
- 
+
+        public void PlaySoundRage()
+        {
+            audioSource.PlayOneShot(rageSoundClip);
+        }
+        public void SpeedUpMusic(float pitch)
+        {
+            audioSource.pitch = pitch; // increasing pitch also increases speed
+        }
+
+        public void ResetMusicSpeed()
+        {
+            audioSource.pitch = 1f; 
+        }
+
     }
 }

@@ -25,7 +25,14 @@ namespace Punk
 
             if (other.gameObject.GetComponent<GreenBossRobotController>())
             {
-                other.gameObject.GetComponent<GreenBossRobotController>().directionLeft = !other.gameObject.GetComponent<GreenBossRobotController>().directionLeft;
+                var bossController = other.gameObject.GetComponent<GreenBossRobotController>();
+
+                // Stop the robot's movement by setting its velocity to zero
+                bossController.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+                // Then, change the direction
+                bossController.directionLeft = !bossController.directionLeft;
+                //other.gameObject.GetComponent<GreenBossRobotController>().directionLeft = !other.gameObject.GetComponent<GreenBossRobotController>().directionLeft;
             }
         }
     }
