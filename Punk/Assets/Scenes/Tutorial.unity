@@ -1528,6 +1528,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3188651335883050352}
     m_Modifications:
     - target: {fileID: 1213816645983854230, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
+      propertyPath: m_BindingId
+      value: 53488d3a-3634-4317-94c8-06d673a1630e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213816645983854230, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
       propertyPath: m_RebindText
       value: 
       objectReference: {fileID: 2057855984}
@@ -1618,6 +1622,10 @@ PrefabInstance:
     - target: {fileID: 4981715079881447663, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
       propertyPath: m_Name
       value: ShootRebind
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981715079881447663, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2606,7 +2614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350822, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_Name
-      value: MoveRebind
+      value: AttackRebind
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350825, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_Pivot.x
@@ -2691,10 +2699,10 @@ PrefabInstance:
     - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_Action
       value: 
-      objectReference: {fileID: -4427394128623273880, guid: c2022df44b78ed24fa148688517729d8, type: 3}
+      objectReference: {fileID: 2045246967546091142, guid: c2022df44b78ed24fa148688517729d8, type: 3}
     - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_BindingId
-      value: 615e2e82-ff47-4988-9cb8-90192a7a5da8
+      value: 3852ddb6-f26f-4f8c-89e0-07b124d0d8ed
       objectReference: {fileID: 0}
     - target: {fileID: 6680292650503350826, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_RebindText
@@ -3736,6 +3744,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 45a4b455-fa52-4802-9eea-f93649634924
     m_ActionName: Game/Shoot[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1094201967}
+        m_TargetAssemblyTypeName: Punk.PlayerController, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 74a7cbab-54be-45f6-9fc8-a35c6ee1c669
+    m_ActionName: Game/Attack[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game
@@ -9617,7 +9641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139702783978544196, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4192072196909628824, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_AnchorMax.y

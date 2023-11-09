@@ -64,6 +64,15 @@ namespace Punk
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""74a7cbab-54be-45f6-9fc8-a35c6ee1c669"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -124,12 +133,23 @@ namespace Punk
                 },
                 {
                     ""name"": """",
-                    ""id"": ""089abb4b-6278-4250-8720-86059c8fbc8c"",
+                    ""id"": ""53488d3a-3634-4317-94c8-06d673a1630e"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3852ddb6-f26f-4f8c-89e0-07b124d0d8ed"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -144,6 +164,7 @@ namespace Punk
             m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
             m_Game_Dash = m_Game.FindAction("Dash", throwIfNotFound: true);
             m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
+            m_Game_Attack = m_Game.FindAction("Attack", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -209,6 +230,7 @@ namespace Punk
         private readonly InputAction m_Game_Jump;
         private readonly InputAction m_Game_Dash;
         private readonly InputAction m_Game_Shoot;
+        private readonly InputAction m_Game_Attack;
         public struct GameActions
         {
             private @PlayerActionControls m_Wrapper;
@@ -217,6 +239,7 @@ namespace Punk
             public InputAction @Jump => m_Wrapper.m_Game_Jump;
             public InputAction @Dash => m_Wrapper.m_Game_Dash;
             public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
+            public InputAction @Attack => m_Wrapper.m_Game_Attack;
             public InputActionMap Get() { return m_Wrapper.m_Game; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -238,6 +261,9 @@ namespace Punk
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
 
             private void UnregisterCallbacks(IGameActions instance)
@@ -254,6 +280,9 @@ namespace Punk
                 @Shoot.started -= instance.OnShoot;
                 @Shoot.performed -= instance.OnShoot;
                 @Shoot.canceled -= instance.OnShoot;
+                @Attack.started -= instance.OnAttack;
+                @Attack.performed -= instance.OnAttack;
+                @Attack.canceled -= instance.OnAttack;
             }
 
             public void RemoveCallbacks(IGameActions instance)
@@ -277,6 +306,7 @@ namespace Punk
             void OnJump(InputAction.CallbackContext context);
             void OnDash(InputAction.CallbackContext context);
             void OnShoot(InputAction.CallbackContext context);
+            void OnAttack(InputAction.CallbackContext context);
         }
     }
 }

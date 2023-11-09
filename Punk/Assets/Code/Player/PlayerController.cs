@@ -160,12 +160,12 @@ namespace Punk
             }
 
             // Attack
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
+            /*if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
             {
                 animator.SetTrigger("Attack");
                 isAttacking = true;
                 attackCooldownTimer = attackCooldown;
-            }
+            }*/
 
             // Aim Toward Mouse
             Vector3 mousePosition = Input.mousePosition;
@@ -176,20 +176,6 @@ namespace Punk
             float angleToMouse = radiansToMouse * Mathf.Rad2Deg;
 
             aimPivot.rotation = Quaternion.Euler(0, 0, angleToMouse);
-
-            // Shoot
-            /*if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                if (ammoLeft > 0)
-                {
-                    GameObject newProjectile = Instantiate(musicNotePrefab);
-                    newProjectile.transform.position = transform.position;
-                    newProjectile.transform.rotation = aimPivot.rotation;
-                    animator.SetTrigger("Shoot");
-                    ammoLeft -= 1;
-                    updateDisplay();
-                }
-            }*/
         }
         public void Jump(InputAction.CallbackContext ctxt)
         {
@@ -238,6 +224,16 @@ namespace Punk
                     ammoLeft -= 1;
                     updateDisplay();
                 }
+            }
+        }
+
+        public void Attack(InputAction.CallbackContext ctxt)
+        {
+            if (ctxt.performed && !isAttacking)
+            {
+                animator.SetTrigger("Attack");
+                isAttacking = true;
+                attackCooldownTimer = attackCooldown;
             }
         }
 
