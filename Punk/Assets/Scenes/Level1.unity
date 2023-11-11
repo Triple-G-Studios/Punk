@@ -2029,6 +2029,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3188651335883050352}
     m_Modifications:
     - target: {fileID: 1213816645983854230, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
+      propertyPath: m_BindingId
+      value: 53488d3a-3634-4317-94c8-06d673a1630e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213816645983854230, guid: 74e117f3df3fc554d9299bc846b44c60, type: 3}
       propertyPath: m_RebindText
       value: 
       objectReference: {fileID: 673903827}
