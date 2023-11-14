@@ -314,6 +314,15 @@ namespace Punk
             if (other.gameObject.CompareTag("BossBullet") && !isDashing && !isInvincible)
             {
                 TakeDamage(1);
+                KBCounter = KBTotalTime;
+                if (other.transform.position.x <= transform.position.x)
+                {
+                    knockFromRight = false;
+                }
+                if (other.transform.position.x > transform.position.x)
+                {
+                    knockFromRight = true;
+                }
                 animator.SetTrigger("Hurt");
                 SoundManager.instance.PlaySoundHurt();
             }
