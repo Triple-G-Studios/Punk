@@ -38,6 +38,10 @@ namespace Punk
         private Vector2 savedVelocity; //for dashing
         private bool facingRight;
         public bool sfxPlaying = false;
+        public float KBForce = 4;
+        public float KBCounter;
+        public float KBTotalTime = 0.2f;
+        public bool knockFromRight;
 
         //Upgradables
         public float projectileDistanceTimer;
@@ -132,19 +136,34 @@ namespace Punk
                 MenuController.instance.Show();
             }
 
-            // Move Player Left
-            if (Input.GetKey(KeyCode.A))
+            if(KBCounter <= 0)
             {
-                _rigidbody2D.AddForce(Vector2.left * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
-                Flip(false);
+                // Move Player Left
+                if (Input.GetKey(KeyCode.A))
+                {
+                    _rigidbody2D.AddForce(Vector2.left * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
+                    Flip(false);
 
-            }
+                }
 
-            // Move Player Right
-            if (Input.GetKey(KeyCode.D))
+                // Move Player Right
+                if (Input.GetKey(KeyCode.D))
+                {
+                    _rigidbody2D.AddForce(Vector2.right * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
+                    Flip(true);
+                }
+            } else
             {
-                _rigidbody2D.AddForce(Vector2.right * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
-                Flip(true);
+                if(knockFromRight == true)
+                {
+                    _rigidbody2D.velocity = new Vector2(-KBForce, KBForce);
+                }
+                if(knockFromRight == false)
+                {
+                    _rigidbody2D.velocity = new Vector2(KBForce, KBForce);
+                }
+
+                KBCounter -= Time.deltaTime;
             }
 
             // Jump
@@ -268,6 +287,15 @@ namespace Punk
             {
                 if (other.gameObject.GetComponent<LaserController>()) Destroy(other.gameObject);
                 TakeDamage(1);
+                KBCounter = KBTotalTime;
+                if(other.transform.position.x <= transform.position.x)
+                {
+                    knockFromRight = false;
+                }
+                if (other.transform.position.x > transform.position.x)
+                {
+                    knockFromRight = true;
+                }
                 animator.SetTrigger("Hurt");
                 SoundManager.instance.PlaySoundHurt();
             }

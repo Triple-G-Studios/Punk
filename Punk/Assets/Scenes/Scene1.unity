@@ -1701,6 +1701,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1094201970}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839837979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4161354114410108369, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
+  m_PrefabInstance: {fileID: 3188651335883050349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &842470216 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1569674075658907423, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
+  m_PrefabInstance: {fileID: 3188651335883050349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &870044398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c3188f7c25741c0a330d49a4e46b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 842470216}
   healthStates:
   - {fileID: 21300000, guid: 13b33b584b3674d499838f5374ec7bd2, type: 3}
   - {fileID: 21300000, guid: 131833653e65d1c4fb18cec21f41a82a, type: 3}
@@ -2207,7 +2229,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a4ca1e6494832a84db82aa774651651b, type: 3}
   musicNotePrefab: {fileID: 4717742124132287083, guid: 5acc1276d47690e42946cdaf5de37a59, type: 3}
   aimPivot: {fileID: 761220408}
-  ammoText: {fileID: 0}
+  ammoText: {fileID: 839837979}
   jumpsLeft: 2
   ammoLeft: 0
   canDash: 0
@@ -2217,6 +2239,10 @@ MonoBehaviour:
   isAttacking: 0
   health: 0
   sfxPlaying: 0
+  KBForce: 4
+  KBCounter: 0
+  KBTotalTime: 0.2
+  knockFromRight: 0
   projectileDistanceTimer: 1
   damageMultiplier: 1
   speedMultiplier: 0
