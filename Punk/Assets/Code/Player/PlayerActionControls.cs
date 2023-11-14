@@ -58,7 +58,7 @@ namespace Punk
                 },
                 {
                     ""name"": ""Shoot"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""45a4b455-fa52-4802-9eea-f93649634924"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

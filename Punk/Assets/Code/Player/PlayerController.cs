@@ -159,14 +159,6 @@ namespace Punk
                 }
             }
 
-            // Attack
-            /*if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
-            {
-                animator.SetTrigger("Attack");
-                isAttacking = true;
-                attackCooldownTimer = attackCooldown;
-            }*/
-
             // Aim Toward Mouse
             Vector3 mousePosition = Input.mousePosition;
             Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -215,6 +207,7 @@ namespace Punk
         {
             if (ctxt.performed)
             {
+                print("HERE");
                 if (ammoLeft > 0)
                 {
                     GameObject newProjectile = Instantiate(musicNotePrefab);
