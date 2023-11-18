@@ -349,6 +349,14 @@ namespace Punk
             invincibleTimer = 1f;
         }
 
+        //heal a bit
+        public void heal(int amt)
+        {
+            if (health + amt >= 3) health = 3;
+            else health = health + amt;
+            healthBar.sprite = healthStates[health];
+        }
+
         // TODO: Change what Die() does, right now it just resets scene
         void Die()
         {

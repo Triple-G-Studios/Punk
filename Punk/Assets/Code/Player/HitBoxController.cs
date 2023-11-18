@@ -30,7 +30,22 @@ namespace Punk
                 {
                     SoundManager.instance.PlaySoundSlash();
                     // Destroy the enemy
-                    Destroy(other.gameObject);
+                    var enemy = other.GetComponentInParent<EnemyController>();
+                    var idleEnemy = other.GetComponentInParent<IdleEnemyController>();
+                    var meleeEnemy = other.GetComponentInParent<MeleeEnemyController>();
+                    var damage = 3 * PlayerController.instance.damageMultiplier;
+                    if (enemy)
+                    {
+                        enemy.TakeHit(damage);
+                    }
+                    else if (idleEnemy)
+                    {
+                        idleEnemy.TakeHit(damage);
+                    }
+                    else if (meleeEnemy)
+                    {
+                        meleeEnemy.TakeHit(damage);
+                    }
                 }
             }
 

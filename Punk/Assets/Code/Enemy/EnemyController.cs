@@ -18,6 +18,7 @@ namespace Punk
         public float visionRange = 5f; 
         public float shootInterval = 2f; 
         private float lastShootTime;
+        public GameObject healthDrop;
 
         // State Tracking
         public bool directionLeft;
@@ -115,7 +116,10 @@ namespace Punk
             animator.SetTrigger("Hurt");
             curHealth -= damage;
             if(curHealth <= 0) {
+                int randChance = Random.Range(0, 2);
+                Vector2 healthSpawn = new Vector2(transform.position.x, transform.position.y);
                 Destroy(gameObject);
+                if (randChance == 1) Instantiate(healthDrop, healthSpawn, Quaternion.identity); //50% drop health
             }
         }
     }
