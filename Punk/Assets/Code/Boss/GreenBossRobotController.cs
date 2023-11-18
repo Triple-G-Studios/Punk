@@ -62,7 +62,7 @@ namespace Punk
             timeUntilNormal = 2f;
             timeBetweenNormalAndChest = 5f;
             timeBetweenChestAndLaser = 10f;
-            speed = 5000f;
+            speed = 3000f;
             lilBulletSpeed = 10f;
             bigBulletSpeed = 7f;
             isInvincible = false;
