@@ -188,7 +188,22 @@ namespace Punk
         {
             if (curHealth <= 0) return;
 
-            curHealth -= damage;
+            if (curHealth > rageStage1Threshold && curHealth - damage < rageStage1Threshold)
+            {
+                curHealth = rageStage1Threshold;
+            } else if (curHealth > rageStage2Threshold && curHealth < rageStage1Threshold && curHealth - damage < rageStage2Threshold)
+            {
+                curHealth = rageStage2Threshold;
+            } else if (curHealth > rageStage3Threshold && curHealth < rageStage2Threshold && curHealth - damage < rageStage3Threshold)
+            {
+                curHealth = rageStage3Threshold;
+            } else if (curHealth - damage < 0)
+            {
+                curHealth = 0;
+            } else
+            {
+                curHealth -= damage;
+            }
             healthBar.SetHealth(curHealth); 
 
             if (curHealth == rageStage1Threshold)

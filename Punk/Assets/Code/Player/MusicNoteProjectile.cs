@@ -33,6 +33,7 @@ namespace Punk
             var enemy = collision.collider.GetComponent<EnemyController>();
             var idleEnemy = collision.collider.GetComponent<IdleEnemyController>();
             var meleeEnemy = collision.collider.GetComponent<MeleeEnemyController>();
+            var boss = collision.collider.GetComponent<GreenBossRobotController>();
             var damage = (PlayerPrefs.HasKey("projDam")) ? PlayerPrefs.GetFloat("projDam") : 1f;
             if (enemy)
             {
@@ -43,6 +44,9 @@ namespace Punk
             } else if (meleeEnemy)
             {
                 meleeEnemy.TakeHit(damage);
+            } else if (boss)
+            {
+                boss.TakeHit(damage * 0.25f);
             }
 
             Destroy(gameObject);
