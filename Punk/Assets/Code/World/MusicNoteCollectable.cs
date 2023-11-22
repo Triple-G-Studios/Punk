@@ -15,10 +15,13 @@ namespace Punk
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
-        void OnTriggerEnter2D()
+        void OnTriggerEnter2D(Collider2D other)
         {
-            PlayerController.instance.getAmmo(PlayerController.instance.ammoPer);
-            Destroy(gameObject);
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                PlayerController.instance.getAmmo(PlayerController.instance.ammoPer);
+                Destroy(gameObject);
+            }
         }
     }
 }

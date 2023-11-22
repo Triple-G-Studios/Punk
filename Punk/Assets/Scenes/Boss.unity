@@ -1892,6 +1892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 327278225}
+  healthNotePrefab: {fileID: 6201815086169466507, guid: d5d6c630a6db79f4a92400a9ad7df579, type: 3}
+  musicNotePrefab: {fileID: 5994265539083832650, guid: b56f29734166ef94b808d4164e149917, type: 3}
   directionLeft: 0
   curHealth: 0
   maxHealth: 20

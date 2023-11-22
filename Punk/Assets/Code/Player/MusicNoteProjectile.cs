@@ -46,7 +46,7 @@ namespace Punk
                 meleeEnemy.TakeHit(damage);
             } else if (boss)
             {
-                boss.TakeHit(damage * 0.25f);
+                boss.TakeHit(damage * 0.33f);
             }
 
             Destroy(gameObject);

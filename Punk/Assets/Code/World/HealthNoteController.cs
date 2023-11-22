@@ -19,10 +19,14 @@ namespace punk
 
         }
 
-        void OnTriggerEnter2D()
+        void OnTriggerEnter2D(Collider2D other)
         {
-            PlayerController.instance.heal(1);
-            Destroy(gameObject);
+            if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                PlayerController.instance.heal(1);
+                Destroy(gameObject);
+            }
         }
+     
     }
 }

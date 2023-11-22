@@ -15,6 +15,8 @@ namespace Punk
         Animator animator;
         GameObject player;
         public HealthBar healthBar;
+        public GameObject healthNotePrefab;
+        public GameObject musicNotePrefab;
 
         // State Tracking
         public bool directionLeft;
@@ -209,14 +211,42 @@ namespace Punk
             if (curHealth == rageStage1Threshold)
             {
                 TriggerRage();
+                Vector2 healthSpawnPosition = new Vector3(3.5f, -3f, -1f);
+                Vector2 ammoSpawnPosition1 = new Vector3(-5f, 2f, -1f);
+                Vector2 ammoSpawnPosition2 = new Vector3(1f, -0.8f, -1f);
+                Vector2 ammoSpawnPosition3 = new Vector3(7.5f, -0.8f, -1f);
+                Vector2 ammoSpawnPosition4 = new Vector3(12.5f, 2f, -1f);
+                Instantiate(healthNotePrefab, healthSpawnPosition, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition1, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition2, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition3, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition4, Quaternion.identity);
             }
             else if (curHealth == rageStage2Threshold)
             {
                 TriggerRage();
+                Vector2 healthSpawnPosition = new Vector3(3.5f, -3f, -1);
+                Vector2 ammoSpawnPosition1 = new Vector3(-6.5f, -0.8f, -1);
+                Vector2 ammoSpawnPosition2 = new Vector3(4f, 2f, -1);
+                Vector2 ammoSpawnPosition3 = new Vector3(14f, -0.8f, -1);
+                Instantiate(healthNotePrefab, healthSpawnPosition, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition1, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition2, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition3, Quaternion.identity);
             }
             else if (curHealth == rageStage3Threshold)
             {
                 TriggerRage();
+                Vector2 healthSpawnPosition = new Vector3(3.5f, -3f, -1);
+                Vector2 ammoSpawnPosition1 = new Vector3(-8f, -3.5f, -1);
+                Vector2 ammoSpawnPosition2 = new Vector3(-3f, -3.5f, -1);
+                Vector2 ammoSpawnPosition3 = new Vector3(10f, -3.5f, -1);
+                Vector2 ammoSpawnPosition4 = new Vector3(15f, -3.5f, -1);
+                Instantiate(healthNotePrefab, healthSpawnPosition, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition1, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition2, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition3, Quaternion.identity);
+                Instantiate(musicNotePrefab, ammoSpawnPosition4, Quaternion.identity);
             }
 
             if (curHealth <= 0)
