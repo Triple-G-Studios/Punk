@@ -152,6 +152,13 @@ namespace Punk
                     _rigidbody2D.AddForce(Vector2.right * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
                     Flip(true);
                 }
+
+                // Move Player Down
+                if (Input.GetKey(KeyCode.S) && _rigidbody2D.velocity.y > 0)
+                {
+                    _rigidbody2D.AddForce(Vector2.down * 20 * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
+                }
+
             } else
             {
                 if(knockFromRight == true)
