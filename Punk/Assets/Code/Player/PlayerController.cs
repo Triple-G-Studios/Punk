@@ -154,9 +154,9 @@ namespace Punk
                 }
 
                 // Move Player Down
-                if (Input.GetKey(KeyCode.S) && _rigidbody2D.velocity.y > 0)
+                if (Input.GetKey(KeyCode.S) && _rigidbody2D.velocity.y != 0)
                 {
-                    _rigidbody2D.AddForce(Vector2.down * 20 * currentSpeed * speedMultiplier * Time.deltaTime, ForceMode2D.Impulse);
+                    _rigidbody2D.AddForce(Vector2.down * 0.1f, ForceMode2D.Impulse);
                 }
 
             } else
