@@ -4827,7 +4827,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 91615399138779631, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2356150157041189936, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_Name
@@ -4887,7 +4887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4969367841805638372, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4990091009937439157, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_Pivot.x
@@ -4983,7 +4983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679424431203500574, guid: d548595e7d4ae364c97550495e1a75bd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5125,7 +5125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 274362978}
   keybindsMenu: {fileID: 1517500180}
-  resetMenu: {fileID: 0}
+  resetMenu: {fileID: 1468425862}
   isPaused: 0
 --- !u!4 &2139201964
 Transform:
