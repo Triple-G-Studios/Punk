@@ -365,7 +365,7 @@ namespace Punk
         }
 
         // TODO: Change what Die() does, right now it just resets scene
-        void Die()
+        public void Die()
         {
             sfxPlaying = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
