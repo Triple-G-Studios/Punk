@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f072f01d9cfb41ac87aa964d48d01d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toLevel: Main Menu
+  toLevel: Title Screen
   boss: {fileID: 0}
 --- !u!61 &226892188
 BoxCollider2D:
@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f072f01d9cfb41ac87aa964d48d01d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toLevel: Main Menu
+  toLevel: Title Screen
   boss: {fileID: 0}
 --- !u!224 &1824026056 stripped
 RectTransform:
