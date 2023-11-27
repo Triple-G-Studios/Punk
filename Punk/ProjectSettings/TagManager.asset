@@ -9,6 +9,8 @@ TagManager:
   - Boss
   - BossHitBox
   - BossBullet
+  - Tele1
+  - Tele2
   layers:
   - Default
   - TransparentFX
