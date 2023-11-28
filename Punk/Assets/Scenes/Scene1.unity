@@ -2223,10 +2223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 842470216}
   healthStates:
-  - {fileID: 21300000, guid: 13b33b584b3674d499838f5374ec7bd2, type: 3}
-  - {fileID: 21300000, guid: 131833653e65d1c4fb18cec21f41a82a, type: 3}
-  - {fileID: 21300000, guid: 6ebb4e29b26b16740b7f44dbe4a51182, type: 3}
-  - {fileID: 21300000, guid: a4ca1e6494832a84db82aa774651651b, type: 3}
+  - {fileID: 21300000, guid: 6334306147f134eefac00c8bed5fa3c4, type: 3}
+  - {fileID: 21300000, guid: 5d090356e6e714ba39bd1d149b0775a0, type: 3}
+  - {fileID: 21300000, guid: c56d30ba34f854817ae3f0c3a600ee70, type: 3}
+  - {fileID: 21300000, guid: 2ff047ac8b7894d3b8899f26c14af638, type: 3}
   musicNotePrefab: {fileID: 4717742124132287083, guid: 5acc1276d47690e42946cdaf5de37a59, type: 3}
   aimPivot: {fileID: 761220408}
   ammoText: {fileID: 839837979}
@@ -3547,7 +3547,7 @@ Transform:
   m_GameObject: {fileID: 1833869104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7826347, y: 2.2565997, z: -10}
+  m_LocalPosition: {x: 3.783867, y: 2.256602, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3714,6 +3714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 3188651335883050350}
   keybindsMenu: {fileID: 3188651335883050351}
+  resetMenu: {fileID: 0}
   isPaused: 0
 --- !u!4 &1854310940
 Transform:
