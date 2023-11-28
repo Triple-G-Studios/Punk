@@ -11,6 +11,8 @@ namespace Punk
         public string toLevel;
         private bool soundPlayed = false;
 
+        private string[] sceneNames = { "Tutorial", "Level1", "Level2", "Level3", "Boss" };
+
         void Start ()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -33,7 +35,27 @@ namespace Punk
             soundPlayed = false;
             PlayerController.instance.sfxPlaying = false;
             PlayerPrefs.SetString("toLevel", toLevel);
+            MarkLevelComplete(toLevel);
             SceneManager.LoadScene("SkillTree");
+        }
+
+        public void MarkLevelComplete(string completedLevel)
+        {
+            int completedLevelIndex = System.Array.IndexOf(sceneNames, completedLevel);
+
+            if (completedLevelIndex == -1)
+            {
+                Debug.LogError("Level name not found in sceneNames array.");
+                return;
+            }
+
+            int levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 1);
+
+            if (completedLevelIndex + 1 > levelsUnlocked)
+            {
+                PlayerPrefs.SetInt("levelsUnlocked", completedLevelIndex + 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 }

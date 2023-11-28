@@ -11,12 +11,14 @@ namespace Punk
         public GameObject mainmenu;
         public GameObject optionsmenu;
         public GameObject keybindsmenu;
+        public GameObject levelsMenu;
 
-       public void Show(GameObject menu)
+        public void Show(GameObject menu)
         {
             mainmenu.SetActive(false);
             optionsmenu.SetActive(false);
             keybindsmenu.SetActive(false);
+            levelsMenu.SetActive(false);
 
             menu.SetActive(true);
         }
@@ -26,5 +28,7 @@ namespace Punk
             PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Tutorial");
         }
+
+
     }
 }
