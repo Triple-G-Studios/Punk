@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 592026353}
   - component: {fileID: 592026356}
   - component: {fileID: 592026355}
-  - component: {fileID: 592026354}
+  - component: {fileID: 592026357}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1331,27 +1331,6 @@ RectTransform:
   m_AnchoredPosition: {x: -12, y: 265}
   m_SizeDelta: {x: 544.4543, y: 296.5856}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &592026354
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592026352}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3728774c1ba933b4dad713006f97fbae, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &592026355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1372,7 +1351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 254c79e3eed014f46a7cb2d61485ea99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b33d73d57c2153408f29ea5d011088e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1390,6 +1369,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592026352}
   m_CullTransparentMesh: 1
+--- !u!95 &592026357
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592026352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7aa98ad83cdbae04a8f7dee86580954e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &673174081
 GameObject:
   m_ObjectHideFlags: 0
