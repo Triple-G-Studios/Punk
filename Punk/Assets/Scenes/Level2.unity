@@ -10048,6 +10048,10 @@ PrefabInstance:
       propertyPath: victorySound
       value: 
       objectReference: {fileID: 8300000, guid: 1a150e76ae759724d89783786abcbb50, type: 3}
+    - target: {fileID: 3545158115116465816, guid: cd1ea96b79313c44f9f834b0e67d24b2, type: 3}
+      propertyPath: teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca3560c66ee1d8244beb7a18d92e5ae6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

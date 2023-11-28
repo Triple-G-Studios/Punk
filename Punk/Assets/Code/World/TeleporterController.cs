@@ -23,19 +23,12 @@ namespace Punk
             {
                 if (oneOn && twoOn)
                 {
+                    SoundManager.instance.PlaySoundTeleport();
                     oneOn = false;
                     twoOn = false;
                     safety = true;
                     player.transform.position = destination.transform.position + (Vector3.up * 0.2f);
                 }
-                /*else if (oneOn && twoOn && collision.gameObject.name == "Player" && source == Tele2)
-                {
-                    twoOn = false;
-                    collision.gameObject.transform.position = Tele1.transform.position + (Vector3.up * 5f);
-                    oneOn = false;
-                    safety = true;
-                    //Invoke("reset", 3);
-                }*/
             }
             else
             {
