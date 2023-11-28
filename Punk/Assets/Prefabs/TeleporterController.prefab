@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6739350065609597943}
   - component: {fileID: 7339345361580817557}
-  - component: {fileID: 7087154219675403089}
-  - component: {fileID: 1585239838306024133}
   - component: {fileID: 5900670037118293508}
+  - component: {fileID: 7561740649765531636}
+  - component: {fileID: 2468643407259706702}
   m_Layer: 9
   m_Name: Tele2
   m_TagString: Tele2
@@ -76,18 +76,31 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 0.54509807, g: 0.67058825, b: 0.74509805, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b4db7038d07f47548a9a84a82fb566ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 2.2991266, y: 0.39750636}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &7087154219675403089
+--- !u!114 &5900670037118293508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103651402895423401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37751a4f717d0804abd6787512c7563f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dest: {fileID: 6486499627558645003}
+--- !u!70 &7561740649765531636
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +132,10 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000004031954, y: 0.17752129}
-  m_Size: {x: 2.0932944, y: 0.050647534}
+  m_Offset: {x: -0.006120391, y: -0.5569328}
+  m_Size: {x: 1.6122423, y: 0.48613924}
   m_Direction: 1
---- !u!70 &1585239838306024133
+--- !u!70 &2468643407259706702
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +144,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6103651402895423401}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 4ce4a8bc548b0436d954ae4cebd5e419, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -154,22 +167,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000023716359, y: -0.01052788}
-  m_Size: {x: 2.278074, y: 0.32381183}
+  m_Offset: {x: -0.000000066601416, y: -0.55869323}
+  m_Size: {x: 1.6000003, y: 0.48261815}
   m_Direction: 1
---- !u!114 &5900670037118293508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6103651402895423401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37751a4f717d0804abd6787512c7563f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dest: {fileID: 6486499627558645003}
 --- !u!1 &6486499627558645003
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,10 +179,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927128196859938044}
-  - component: {fileID: 3172301466342857118}
-  - component: {fileID: 2846274590201675167}
-  - component: {fileID: 4941465833194086427}
   - component: {fileID: 5879814508361846669}
+  - component: {fileID: 1429038401787775583}
+  - component: {fileID: 695927042573080448}
+  - component: {fileID: 9205700568779304915}
   m_Layer: 9
   m_Name: Tele1
   m_TagString: Tele1
@@ -205,7 +205,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 330308125155132315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3172301466342857118
+--- !u!114 &5879814508361846669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486499627558645003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37751a4f717d0804abd6787512c7563f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dest: {fileID: 6103651402895423401}
+--- !u!212 &1429038401787775583
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,19 +258,19 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 0.54509807, g: 0.67058825, b: 0.74509805, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4db7038d07f47548a9a84a82fb566ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 2.2991266, y: 0.39750636}
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2846274590201675167
+--- !u!70 &695927042573080448
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,10 +302,10 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000004031954, y: 0.17752129}
-  m_Size: {x: 2.0932944, y: 0.050647534}
+  m_Offset: {x: 0.006235471, y: -0.585631}
+  m_Size: {x: 1.6125768, y: 0.42878848}
   m_Direction: 1
---- !u!70 &4941465833194086427
+--- !u!70 &9205700568779304915
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +314,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6486499627558645003}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 4ce4a8bc548b0436d954ae4cebd5e419, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -324,22 +337,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000023716359, y: -0.01052788}
-  m_Size: {x: 2.278074, y: 0.32381183}
+  m_Offset: {x: 0.0052704695, y: -0.60330313}
+  m_Size: {x: 1.6105462, y: 0.39349875}
   m_Direction: 1
---- !u!114 &5879814508361846669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6486499627558645003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37751a4f717d0804abd6787512c7563f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dest: {fileID: 6103651402895423401}
 --- !u!1 &7281609312552699224
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ namespace Punk
                     oneOn = false;
                     twoOn = false;
                     safety = true;
-                    player.transform.position = destination.transform.position + (Vector3.up * 2f);
+                    player.transform.position = destination.transform.position + (Vector3.up * 0.2f);
                 }
                 /*else if (oneOn && twoOn && collision.gameObject.name == "Player" && source == Tele2)
                 {
