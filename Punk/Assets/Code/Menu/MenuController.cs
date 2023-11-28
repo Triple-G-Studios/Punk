@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Punk
 {
@@ -46,6 +47,12 @@ namespace Punk
             resetMenu.SetActive(false);
             //levelsMenu.SetActive(false);
             menu.SetActive(true);
+        }
+
+        public void QuitToMenu()
+        {
+            Hide();
+            SceneManager.LoadScene("Title Screen");
         }
     }
 }

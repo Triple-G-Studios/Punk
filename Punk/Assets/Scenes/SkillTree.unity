@@ -2201,8 +2201,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: -160}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 14.2946, y: -161.1663}
+  m_SizeDelta: {x: 196.5892, y: 52.3326}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842066021
 MonoBehaviour:
@@ -2224,7 +2224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase melee range by 25%
+  m_text: Swings destroy enemy bullets
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -30.49945, w: 0}
+  m_margin: {x: 0, y: 0, z: -77.15149, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
