@@ -42,6 +42,7 @@ namespace Punk
         public float KBCounter;
         public float KBTotalTime = 0.2f;
         public bool knockFromRight;
+        public int parry = 0;
 
         //Upgradables
         public float projectileDistanceTimer;
@@ -385,6 +386,7 @@ namespace Punk
             PlayerPrefs.SetInt("ammoPer", ammoPer);
             PlayerPrefs.SetInt("ammoLeft", ammoLeft);
             PlayerPrefs.SetFloat("projTime", projectileDistanceTimer);
+            PlayerPrefs.SetInt("parry", parry);
         }
 
         public void getAmmo(int ammoAmt)
@@ -420,6 +422,8 @@ namespace Punk
             else ammoPer = 1;
             if (PlayerPrefs.HasKey("projTime")) projectileDistanceTimer = PlayerPrefs.GetFloat("projTime");
             else projectileDistanceTimer = 1;
+            if (PlayerPrefs.HasKey("parry")) parry = PlayerPrefs.GetInt("parry");
+            else parry = 0;
         }
 
         void updateDisplay()

@@ -92,6 +92,13 @@ namespace Punk
             nextScene();
         }
 
+        public void canMelee()
+        {
+            PlayerPrefs.SetInt("parry", 1);
+            PlayerPrefs.SetInt("mosh", PlayerPrefs.GetInt("mosh") + 1);
+            nextScene();
+        }
+
         private void nextScene()
         {
             SceneManager.LoadScene(PlayerPrefs.GetString("toLevel"));

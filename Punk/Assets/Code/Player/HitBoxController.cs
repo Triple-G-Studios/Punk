@@ -33,6 +33,7 @@ namespace Punk
                     var enemy = other.GetComponentInParent<EnemyController>();
                     var idleEnemy = other.GetComponentInParent<IdleEnemyController>();
                     var meleeEnemy = other.GetComponentInParent<MeleeEnemyController>();
+                    var laser = other.GetComponentInParent<LaserController>();
                     var damage = 3 * PlayerController.instance.damageMultiplier;
                     if (enemy)
                     {
@@ -45,6 +46,10 @@ namespace Punk
                     else if (meleeEnemy)
                     {
                         meleeEnemy.TakeHit(damage);
+                    }
+                    else if (laser && PlayerPrefs.GetInt("parry") == 1)
+                    {
+                        Destroy(laser);
                     }
                 }
             }
