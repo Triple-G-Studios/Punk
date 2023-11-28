@@ -7168,11 +7168,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.782648
+      value: 3.7838802
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2496345
+      value: 2.2496364
       objectReference: {fileID: 0}
     - target: {fileID: 11151914679839147, guid: f5df14e631d8c654a990c93876a456e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7518,10 +7518,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 740701480}
   healthStates:
-  - {fileID: 21300000, guid: 13b33b584b3674d499838f5374ec7bd2, type: 3}
-  - {fileID: 21300000, guid: 131833653e65d1c4fb18cec21f41a82a, type: 3}
-  - {fileID: 21300000, guid: 6ebb4e29b26b16740b7f44dbe4a51182, type: 3}
-  - {fileID: 21300000, guid: a4ca1e6494832a84db82aa774651651b, type: 3}
+  - {fileID: 21300000, guid: 6334306147f134eefac00c8bed5fa3c4, type: 3}
+  - {fileID: 21300000, guid: 5d090356e6e714ba39bd1d149b0775a0, type: 3}
+  - {fileID: 21300000, guid: c56d30ba34f854817ae3f0c3a600ee70, type: 3}
+  - {fileID: 21300000, guid: 2ff047ac8b7894d3b8899f26c14af638, type: 3}
   musicNotePrefab: {fileID: 4717742124132287083, guid: 5acc1276d47690e42946cdaf5de37a59, type: 3}
   aimPivot: {fileID: 1873040920}
   ammoText: {fileID: 1046325204}
