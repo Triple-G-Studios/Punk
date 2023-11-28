@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+namespace Punk
 {
-    public Transform journey;
-    public Transform destination;
-    public GameObject[] waypoints;
-    public int index = 0;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class Teleporter : MonoBehaviour
     {
-        if (collision.gameObject.name == "Player" && collision.gameObject.name == "journey")
+        public GameObject dest;
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            player.position = destination.position;
-            delay(3000);
-        } else if (collsion.gameObject.name == "Player" && collision.gameObject.name == "journey")
+            TeleporterController.instance.tryTeleport(collision.gameObject, dest);
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
         {
-            player.position = journey.position;
-            delay(3000);
+            TeleporterController.instance.tryReset();
         }
     }
 }
