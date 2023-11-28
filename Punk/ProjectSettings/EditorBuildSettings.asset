@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillTree.unity
     guid: 025334d76eaec6643a3b53bc3650db1c
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 49d402ca0a4de7e47b17027874fe0a09
   m_configObjects: {}
