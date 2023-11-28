@@ -15,10 +15,10 @@ namespace Punk
         {
             if (other.gameObject.GetComponent<PlayerController>())
             {
-                /*if (toLevel == "Victory" && (boss == null || boss.curHealth > 0))
+                if (toLevel == "Victory" && (boss == null || boss.curHealth > 0))
                 {
                     return;
-                }*/
+                }
                 other.gameObject.GetComponent<PlayerController>().saveData();
                 SceneManager.LoadScene(toLevel);
             }
