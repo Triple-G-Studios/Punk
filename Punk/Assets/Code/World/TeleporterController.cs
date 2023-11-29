@@ -28,6 +28,7 @@ namespace Punk
                     twoOn = false;
                     safety = true;
                     player.transform.position = destination.transform.position + (Vector3.up * 0.2f);
+                    tryReset();
                 }
             }
             else

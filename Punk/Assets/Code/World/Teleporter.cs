@@ -10,12 +10,18 @@ namespace Punk
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            TeleporterController.instance.tryTeleport(collision.gameObject, dest);
+            if (collision.gameObject.name == "Player")
+            {
+                TeleporterController.instance.tryTeleport(collision.gameObject, dest);
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            TeleporterController.instance.tryReset();
+            if (collision.gameObject.name == "Player")
+            {
+                TeleporterController.instance.tryReset();
+            }
         }
     }
 }
