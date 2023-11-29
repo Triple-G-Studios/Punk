@@ -188,7 +188,7 @@ namespace Punk
 
             // Aim Toward Mouse
             Vector3 mousePosition = Input.mousePosition;
-            Vector3 mousePositionInWorld = (Camera.main.enabled) ? Camera.main.ScreenToWorldPoint(mousePosition) : new Vector3();
+            Vector3 mousePositionInWorld = (Camera.main != null) ? Camera.main.ScreenToWorldPoint(mousePosition) : new Vector3();
             Vector3 directionFromPlayerToMouse = mousePositionInWorld - transform.position;
 
             float radiansToMouse = Mathf.Atan2(directionFromPlayerToMouse.y, directionFromPlayerToMouse.x);
