@@ -92,10 +92,16 @@ namespace Punk
             nextScene();
         }
 
-        public void canMelee()
+        public void canParry()
         {
             PlayerPrefs.SetInt("parry", 1);
             PlayerPrefs.SetInt("mosh", PlayerPrefs.GetInt("mosh") + 1);
+            nextScene();
+        }
+
+        public void addAmmo()
+        {
+            PlayerPrefs.SetInt("ammoLeft", PlayerPrefs.GetInt("ammoLeft")+2);
             nextScene();
         }
 

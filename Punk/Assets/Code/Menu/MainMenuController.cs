@@ -25,9 +25,18 @@ namespace Punk
 
         public void playGame()
         {
-            PlayerPrefs.DeleteAll();
+            ClearPlayerPrefsExceptProgress();
             SceneManager.LoadScene("Tutorial");
         }
+
+        public void ClearPlayerPrefsExceptProgress()
+        {
+            int levelProgress = PlayerPrefs.GetInt("levelsUnlocked", 1);
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("levelsUnlocked", levelProgress);
+            PlayerPrefs.Save();
+        }
+
 
 
     }

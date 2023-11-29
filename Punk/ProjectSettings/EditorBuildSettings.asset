@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 55708196807dc4ffc8536d228ce83015
   - enabled: 0
-    path: Assets/Scenes/LevelPending.unity
+    path: Assets/Scenes/Level3.unity
     guid: ce43c83c21c93434893ec5f34b7d58ed
   - enabled: 1
     path: Assets/Scenes/Victory.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SkillTree.unity
     guid: 025334d76eaec6643a3b53bc3650db1c
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 49d402ca0a4de7e47b17027874fe0a09
   m_configObjects: {}

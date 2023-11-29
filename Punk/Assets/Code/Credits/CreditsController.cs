@@ -7,6 +7,11 @@ namespace Punk
 {
     public class CreditsController : MonoBehaviour
     {
+        public void rollCredits()
+        {
+            SceneManager.LoadScene("Credits");
+        }
+
         public void switchScene()
         {
             SceneManager.LoadScene("Title Screen");
