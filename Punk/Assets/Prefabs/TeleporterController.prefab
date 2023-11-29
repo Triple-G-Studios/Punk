@@ -132,8 +132,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006120391, y: -0.5569328}
-  m_Size: {x: 1.6122423, y: 0.48613924}
+  m_Offset: {x: -0.026727255, y: -0.4461619}
+  m_Size: {x: 1.2515996, y: 0.26459834}
   m_Direction: 1
 --- !u!70 &2468643407259706702
 CapsuleCollider2D:
@@ -302,8 +302,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006235471, y: -0.585631}
-  m_Size: {x: 1.6125768, y: 0.42878848}
+  m_Offset: {x: -0.005052743, y: -0.476492}
+  m_Size: {x: 1.183551, y: 0.27072564}
   m_Direction: 1
 --- !u!70 &9205700568779304915
 CapsuleCollider2D:
@@ -337,8 +337,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0052704695, y: -0.60330313}
-  m_Size: {x: 1.6105462, y: 0.39349875}
+  m_Offset: {x: 0.016565848, y: -0.60330313}
+  m_Size: {x: 1.5879748, y: 0.39349896}
   m_Direction: 1
 --- !u!1 &7281609312552699224
 GameObject:

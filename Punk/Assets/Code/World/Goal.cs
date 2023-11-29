@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Net;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.SceneManagement;
 
 namespace Punk
@@ -9,13 +12,29 @@ namespace Punk
     {
         Rigidbody2D _rigidbody2D;
         public string toLevel;
+        public GameObject[] waypoints;
+        public int idx = 0;
         private bool soundPlayed = false;
+        public float speed = 1.5f;
 
         private string[] sceneNames = { "Tutorial", "Level1", "Level2", "Level3", "Boss" };
 
         void Start ()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+        }
+
+        void Update ()
+        {
+            if (Vector2.Distance(waypoints[idx].transform.position, transform.position) < 1f)
+            {
+                idx++;
+                if (idx >= waypoints.Length)
+                {
+                    idx = 0;
+                }
+            }
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[idx].transform.position, Time.deltaTime * speed);
         }
 
         void OnCollisionEnter2D(Collision2D other)

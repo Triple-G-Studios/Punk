@@ -234,7 +234,6 @@ namespace Punk
         {
             if (ctxt.performed)
             {
-                print("HERE");
                 if (ammoLeft > 0)
                 {
                     GameObject newProjectile = Instantiate(musicNotePrefab);
@@ -360,6 +359,7 @@ namespace Punk
         //heal a bit
         public void heal(int amt)
         {
+            SoundManager.instance.PlaySoundHeal();
             if (health + amt >= 3) health = 3;
             else health = health + amt;
             healthBar.sprite = healthStates[health];
@@ -391,6 +391,7 @@ namespace Punk
 
         public void getAmmo(int ammoAmt)
         {
+            SoundManager.instance.PlaySoundCollect();
             ammoLeft += ammoAmt;
             updateDisplay();
         }

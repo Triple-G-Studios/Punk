@@ -50,6 +50,10 @@ MonoBehaviour:
   whooshSound: {fileID: 8300000, guid: fc6ff7a80d33869498cd6704546ec2de, type: 3}
   gameOverSound: {fileID: 8300000, guid: 953cdffbd01b3e94182b4acf08c089a5, type: 3}
   jumpSound: {fileID: 8300000, guid: 49f0890841e414f45bd698c5d8ceaefc, type: 3}
+  victorySound: {fileID: 8300000, guid: 1a150e76ae759724d89783786abcbb50, type: 3}
+  teleportSound: {fileID: 8300000, guid: ca3560c66ee1d8244beb7a18d92e5ae6, type: 3}
+  healSound: {fileID: 8300000, guid: 4991fe2e502d1b04c9b82e2a703a38b6, type: 3}
+  collectSound: {fileID: 8300000, guid: 31a23b3074d22ba488a90341b099005c, type: 3}
 --- !u!82 &8660312894064991676
 AudioSource:
   m_ObjectHideFlags: 0
