@@ -637,27 +637,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Title Screen / Victory Scene Music
+  m_text: 'Title Screen / Victory Scene
 
-    Tutorial Level Music
+    Tutorial Level
+
+    Level 1
 
     Level
-    1 Music
+    2
 
-    Level 2 Music
+    Level 3
 
-    Level 3 Music
-
-    Boss Music
+    Boss
 
     Credits
 
-    Skill
-    Tree Music
+    Skill Tree
 
-    Damage Sound Effect
+    Damage SFX
 
-    Victory Jingle'
+    Victory
+    Jingle'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
@@ -1538,8 +1538,7 @@ MonoBehaviour:
 
     David Kim
 
-
-'
+    Deaven Crigler'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
