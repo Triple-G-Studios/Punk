@@ -652,12 +652,14 @@ MonoBehaviour:
 
     Credits
 
+    Secret Areas
+
     Skill Tree
 
-    Damage SFX
+    Damage
+    SFX
 
-    Victory
-    Jingle'
+    Victory Jingle'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
@@ -1358,31 +1360,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Borderlands 3 - Digby Vermouth Various Artists
-
-    Mega Man 2 - Metal
-    Man Stage Manami Matsumae, Takashi Tateishi
-
-    Cyber Shadow - Mekacity Ruins,
-    Pt. 2 Pentadrangle
-
-    CORE - Undertale - Toby Fox
-
-    Tools of War - Shovel
-    Knight - Jake Kaufman
-
-    Vs. Rotatron/Refreshinator - Sonic Colors - Tomoya
-    Ohtani
-
-    Beyond the Heart - Celeste - Lena Raine
-
-    Make This Right Remix
-    - Furi - The Game Bakers
-
-    Minecraft Damage - Sound Effect Daniel Rosenfeld
-
-    Final
-    Fantasy VII - Victory Fanfare Nobuo Uematsu'
+  m_text: "Borderlands 3 - Digby Vermouth Various Artists\nMega Man 2 - Metal Man
+    Stage Manami Matsumae, Takashi Tateishi\nCyber Shadow - Mekacity Ruins, Pt. 2
+    Pentadrangle\nCORE - Undertale - Toby Fox\nTools of War - Shovel Knight - Jake
+    Kaufman\nVs. Rotatron/Refreshinator - Sonic Colors - Tomoya Ohtani\nBeyond the
+    Heart - Celeste - Lena Raine\nBlue Sky Athletics - Super Mario Galaxy - Mahito
+    Yokota \nMake This Right Remix - Furi - The Game Bakers\nMinecraft Damage - Sound
+    Effect Daniel Rosenfeld\nFinal Fantasy VII - Victory Fanfare Nobuo Uematsu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
@@ -1538,7 +1522,7 @@ MonoBehaviour:
 
     David Kim
 
-    Deaven Crigler'
+    Isabella Blair'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
   m_sharedMaterial: {fileID: 3958592311131290834, guid: 4dcfe1f6a5e1858408747fd2b1749a14, type: 2}
